@@ -205,7 +205,7 @@
         position: absolute;
         inset: 0;
         z-index: -3;
-        background-image: url('https://ginasiostatus.pt/wp-content/uploads/2026/08/entrada-.png');
+        background-image: url('hero-status.png');
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
@@ -322,6 +322,7 @@
         font-weight: 400;
         line-height: 1.68;
         color: rgba(23,23,23,.70);
+        text-wrap: pretty;
     }
 
     .status-intro-copy p + p {
