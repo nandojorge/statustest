@@ -22,6 +22,11 @@ document.addEventListener(
                 "statusMobileMenu"
             );
 
+        const mobileClose =
+            document.getElementById(
+                "statusMobileClose"
+            );
+
         function updateHeader() {
 
             if (
@@ -59,6 +64,52 @@ document.addEventListener(
 
         }
 
+        function setMenuState(open) {
+
+            if (
+                !header ||
+                !menuButton ||
+                !mobileMenu
+            ) {
+                return;
+            }
+
+            mobileMenu
+                .classList
+                .toggle(
+                    "is-open",
+                    open
+                );
+
+            header
+                .classList
+                .toggle(
+                    "is-menu-open",
+                    open
+                );
+
+            menuButton
+                .setAttribute(
+                    "aria-expanded",
+                    open
+                );
+
+            mobileMenu
+                .setAttribute(
+                    "aria-hidden",
+                    !open
+                );
+
+            document
+                .body
+                .style
+                .overflow =
+                    open
+                        ? "hidden"
+                        : "";
+
+        }
+
         updateHeader();
 
         window.addEventListener(
@@ -82,36 +133,18 @@ document.addEventListener(
             menuButton.addEventListener(
                 "click",
                 function () {
-
-                    const open =
-                        mobileMenu
-                            .classList
-                            .toggle(
-                                "is-open"
-                            );
-
-                    menuButton
-                        .setAttribute(
-                            "aria-expanded",
-                            open
-                        );
-
-                    mobileMenu
-                        .setAttribute(
-                            "aria-hidden",
-                            !open
-                        );
-
-                    document
-                        .body
-                        .style
-                        .overflow =
-                            open
-                                ? "hidden"
-                                : "";
-
+                    setMenuState(true);
                 }
             );
+
+            if (mobileClose) {
+                mobileClose.addEventListener(
+                    "click",
+                    function () {
+                        setMenuState(false);
+                    }
+                );
+            }
 
             mobileMenu
                 .querySelectorAll(
@@ -119,40 +152,32 @@ document.addEventListener(
                 )
                 .forEach(
                     function (link) {
-
                         link.addEventListener(
                             "click",
                             function () {
-
-                                mobileMenu
-                                    .classList
-                                    .remove(
-                                        "is-open"
-                                    );
-
-                                menuButton
-                                    .setAttribute(
-                                        "aria-expanded",
-                                        "false"
-                                    );
-
-                                mobileMenu
-                                    .setAttribute(
-                                        "aria-hidden",
-                                        "true"
-                                    );
-
-                                document
-                                    .body
-                                    .style
-                                    .overflow =
-                                        "";
-
+                                setMenuState(false);
                             }
                         );
-
                     }
                 );
+
+            document.addEventListener(
+                "keydown",
+                function (event) {
+
+                    if (
+                        event.key === "Escape" &&
+                        mobileMenu
+                            .classList
+                            .contains(
+                                "is-open"
+                            )
+                    ) {
+                        setMenuState(false);
+                    }
+
+                }
+            );
 
         }
 

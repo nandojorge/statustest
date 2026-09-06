@@ -58,18 +58,71 @@
         id="statusMobileMenu"
         aria-hidden="true"
     >
-        <nav aria-label="Navegação mobile">
-            <a href="#status">O Status</a>
-            <a href="#servicos">Serviços</a>
-            <a href="#modalidades">Modalidades</a>
-            <a href="#espacos">Espaços</a>
-            <a href="#contactos">Contactos</a>
-        </nav>
+        <div class="status-mobile-menu-inner">
 
-        <a href="#visita" class="status-mobile-cta">
-            <span>Marcar uma visita</span>
-            <span>↗︎</span>
-        </a>
+            <button
+                class="status-mobile-close"
+                id="statusMobileClose"
+                type="button"
+                aria-label="Fechar menu"
+            >
+                <span class="status-mobile-close-icon">×</span>
+                <span class="status-mobile-close-label">Fechar</span>
+            </button>
+
+            <nav
+                class="status-mobile-nav"
+                aria-label="Navegação mobile"
+            >
+                <a href="#status">O Status</a>
+                <a href="#servicos">Serviços</a>
+                <a href="#modalidades">Modalidades</a>
+                <a href="#espacos">Espaços</a>
+                <a href="#contactos">Contactos</a>
+            </nav>
+
+            <div
+                class="status-mobile-socials"
+                aria-label="Redes sociais"
+            >
+                <a
+                    href="https://www.instagram.com/statusfamalicao/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram do Status"
+                >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <circle cx="17.5" cy="6.5" r="1"></circle>
+                    </svg>
+                </a>
+
+                <a
+                    href="https://www.facebook.com/ginasiostatus/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook do Status"
+                >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v6h4v-6h3.5l.5-4h-4V9c0-.7.3-1 1-1z"></path>
+                    </svg>
+                </a>
+
+                <a
+                    href="https://www.tiktok.com/@statusfamalicao"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="TikTok do Status"
+                >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M14 3v10.1a4.6 4.6 0 1 1-4-4.6v3.2a1.6 1.6 0 1 0 1 1.5V3h3z"></path>
+                        <path d="M14 5.5c1.2 1.5 2.6 2.3 4 2.5v3.1c-1.5-.2-2.8-.8-4-1.7z"></path>
+                    </svg>
+                </a>
+            </div>
+
+        </div>
     </div>
 
     <section class="status-hero" id="status">
