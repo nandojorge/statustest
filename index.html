@@ -160,10 +160,10 @@
 
     .status-header.is-content {
         height: 72px;
-        background: rgba(243,240,234,.95);
-        -webkit-backdrop-filter: blur(16px);
-        backdrop-filter: blur(16px);
-        box-shadow: 0 1px 0 rgba(20,20,20,.08);
+        background: #f3f0ea;
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        box-shadow: 0 1px 0 rgba(20,20,20,.10);
     }
 
     .status-header.is-content .status-nav a {
@@ -206,7 +206,7 @@
         position: absolute;
         inset: 0;
         z-index: -3;
-        background-image: url('https://ginasiostatus.pt/wp-content/uploads/2026/08/entrada-.png');
+        background-image: url('https://ginasiostatus.pt/wp-content/uploads/2026/09/rececao.png');
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
@@ -272,12 +272,12 @@
     .status-intro {
         position: relative;
         width: 100%;
-        min-height: 58svh;
+        min-height: auto;
         display: flex;
         align-items: center;
         justify-content: center;
-        background: var(--status-cream);
-        padding: clamp(72px,6vw,96px) var(--status-page-padding);
+        background: #d9d3ca;
+        padding: clamp(58px,5vw,74px) var(--status-page-padding);
         box-shadow: 0 -30px 60px rgba(0,0,0,.07);
     }
 
@@ -330,38 +330,230 @@
         margin-top: 14px;
     }
 
-    .status-intro-link {
+    .status-button {
         display: inline-flex;
         align-items: center;
-        gap: 12px;
-        margin-top: 28px;
-        padding-bottom: 6px;
-        border-bottom: 1px solid rgba(23,23,23,.28);
+        justify-content: center;
+        min-height: 42px;
+        padding: 12px 17px;
+        border: 1px solid rgba(23,23,23,.30);
+        background: transparent;
         font-family: "Inter",Arial,sans-serif!important;
         font-size: 12px;
-        font-weight: 500;
+        font-weight: 600;
         line-height: 1;
-        letter-spacing: .02em;
+        letter-spacing: .025em;
         color: var(--status-dark)!important;
-        transition: color .3s ease,border-color .3s ease;
+        transition: color .3s ease,border-color .3s ease,background-color .3s ease;
     }
 
-    .status-intro-link span {
-        color: inherit!important;
-    }
-
-    .status-intro-link:hover {
+    .status-button:hover {
         color: var(--status-gold)!important;
         border-color: var(--status-gold);
+        background: rgba(176,138,98,.05);
     }
 
-    .status-intro-link-arrow {
-        display: inline-block;
-        transition: transform .25s ease;
+    .status-intro .status-button {
+        margin-top: 28px;
     }
 
-    .status-intro-link:hover .status-intro-link-arrow {
-        transform: translate(3px,-3px);
+    .status-services {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        background: var(--status-cream);
+        padding: clamp(90px,8vw,132px) 0 clamp(100px,9vw,148px);
+    }
+
+    .status-services-head {
+        width: min(100%,var(--status-max-width));
+        margin: 0 auto;
+        padding: 0 var(--status-page-padding);
+    }
+
+    .status-services-eyebrow {
+        display: block;
+        margin-bottom: 16px;
+        font-family: "Inter",Arial,sans-serif!important;
+        font-size: 11px;
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+        color: var(--status-gold)!important;
+    }
+
+    .status-services h2 {
+        width: min(760px,100%);
+        margin: 0;
+        font-family: "Cormorant Garamond",Georgia,serif!important;
+        font-size: clamp(46px,4.8vw,72px);
+        font-weight: 400;
+        line-height: .98;
+        letter-spacing: -.03em;
+        color: var(--status-dark)!important;
+        text-wrap: balance;
+    }
+
+    .status-services-toolbar {
+        width: min(100%,var(--status-max-width));
+        margin: 34px auto 0;
+        padding: 0 var(--status-page-padding);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+    }
+
+    .status-services-hint {
+        font-family: "Inter",Arial,sans-serif!important;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: .06em;
+        text-transform: uppercase;
+        color: rgba(23,23,23,.52)!important;
+    }
+
+    .status-services-arrows {
+        display: flex;
+        gap: 10px;
+    }
+
+    .status-services-arrow {
+        width: 42px;
+        height: 42px;
+        border: 1px solid rgba(23,23,23,.20);
+        border-radius: 50%;
+        background: transparent !important;
+        color: var(--status-dark);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Inter",Arial,sans-serif!important;
+        font-size: 18px;
+        line-height: 1;
+        cursor: pointer;
+        transition: border-color .25s ease,color .25s ease,background-color .25s ease;
+    }
+
+    .status-services-arrow:hover,
+    .status-services-arrow:focus {
+        background: rgba(176,138,98,.06)!important;
+        border-color: var(--status-gold);
+        color: var(--status-gold);
+        outline: none;
+    }
+
+    .status-services-viewport {
+        width: min(100%,var(--status-max-width));
+        margin: clamp(42px,5vw,66px) auto 0;
+        overflow: hidden;
+        padding: 0 var(--status-page-padding);
+    }
+
+    .status-services-track {
+        display: flex;
+        gap: clamp(20px,2vw,30px);
+        transition: transform .55s cubic-bezier(.22,.61,.36,1);
+        will-change: transform;
+    }
+
+    .status-service-card {
+        flex: 0 0 calc((100% - (2 * clamp(20px,2vw,30px))) / 3);
+        min-width: 0;
+        background: #fff;
+        border: 1px solid rgba(23,23,23,.10);
+        overflow: hidden;
+        transition: border-color .3s ease, box-shadow .3s ease, transform .3s ease;
+    }
+
+    .status-service-image {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        overflow: hidden;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        transform: scale(1);
+        transition: transform .6s cubic-bezier(.22,.61,.36,1), filter .4s ease;
+    }
+
+    .status-service-card:hover {
+        border-color: rgba(176,138,98,.55);
+        box-shadow: 0 18px 50px rgba(23,23,23,.08);
+        transform: translateY(-4px);
+    }
+
+    .status-service-card:hover .status-service-image {
+        transform: scale(1.045);
+        filter: saturate(1.05) contrast(1.02);
+    }
+
+    .status-service-body {
+        padding: 26px 26px 28px;
+    }
+
+    .status-service-card h3 {
+        margin: 0;
+        font-family: "Cormorant Garamond",Georgia,serif!important;
+        font-size: clamp(30px,2.4vw,40px);
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: -.02em;
+        color: var(--status-dark)!important;
+        transition: color .3s ease;
+    }
+
+    .status-service-card:hover h3 {
+        color: var(--status-gold)!important;
+    }
+
+    .status-service-card p {
+        margin: 14px 0 0;
+        font-family: "Inter",Arial,sans-serif!important;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.62;
+        color: rgba(23,23,23,.66);
+        text-wrap: pretty;
+    }
+
+    .status-service-card .status-button {
+        margin-top: 22px;
+    }
+
+    .status-service-image--assessment,
+    .status-service-image--room,
+    .status-service-image--group {
+        background-image: url('https://ginasiostatus.pt/wp-content/uploads/2026/09/rececao.png');
+    }
+
+    .status-service-image--pt,
+    .status-service-image--classes {
+        background-image: url('https://ginasiostatus.pt/wp-content/uploads/2026/08/entrada-.png');
+    }
+
+    .status-services-dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 34px;
+    }
+
+    .status-services-dot {
+        width: 7px;
+        height: 7px;
+        border: 0;
+        border-radius: 50%;
+        padding: 0;
+        background: rgba(23,23,23,.18) !important;
+        cursor: pointer;
+    }
+
+    .status-services-dot.is-active {
+        width: 28px;
+        border-radius: 999px;
+        background: var(--status-gold) !important;
     }
 
     .status-menu-toggle {
@@ -371,11 +563,23 @@
         height: 38px;
         padding: 8px 3px;
         border: 0;
-        background: transparent;
+        background: transparent !important;
+        box-shadow: none !important;
+        outline: none;
         cursor: pointer;
         flex-direction: column;
         justify-content: center;
         gap: 7px;
+        appearance: none;
+        -webkit-appearance: none;
+    }
+
+    .status-menu-toggle:hover,
+    .status-menu-toggle:focus,
+    .status-menu-toggle:active {
+        background: transparent !important;
+        box-shadow: none !important;
+        outline: none;
     }
 
     .status-menu-toggle span {
@@ -429,28 +633,56 @@
     .status-mobile-close {
         display: inline-flex;
         align-items: center;
+        justify-content: flex-start;
         align-self: flex-start;
-        gap: 12px;
+        gap: 10px;
+        height: 32px;
+        min-height: 32px;
         padding: 0;
         border: 0;
-        background: transparent;
+        background: transparent !important;
+        box-shadow: none !important;
+        outline: none;
         color: var(--status-dark);
         cursor: pointer;
-        font-family: "Inter", Arial, sans-serif !important;
+        font-family: "Inter",Arial,sans-serif!important;
+        appearance: none;
+        -webkit-appearance: none;
+    }
+
+    .status-mobile-close:hover,
+    .status-mobile-close:focus,
+    .status-mobile-close:active {
+        background: transparent !important;
+        box-shadow: none !important;
+        outline: none;
+        color: var(--status-dark);
     }
 
     .status-mobile-close-icon {
-        display: block;
-        font-size: 28px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 32px;
+        font-size: 26px;
         font-weight: 300;
-        line-height: 1;
+        line-height: 32px;
+        transform: none;
+        padding: 0;
+        margin: 0;
     }
 
     .status-mobile-close-label {
-        display: block;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 32px;
+        padding: 0;
+        margin: 0;
         font-size: 12px;
         font-weight: 500;
-        line-height: 1;
+        line-height: 32px;
         letter-spacing: .14em;
         text-transform: uppercase;
     }
@@ -482,8 +714,9 @@
         margin-top: auto;
         display: flex;
         align-items: center;
-        gap: 28px;
+        gap: 24px;
         padding-top: 30px;
+        min-height: 28px;
     }
 
     .status-mobile-socials a {
@@ -492,7 +725,11 @@
         justify-content: center;
         width: 28px;
         height: 28px;
+        padding: 0;
+        margin: 0;
         color: var(--status-dark) !important;
+        line-height: 0;
+        vertical-align: middle;
         transition: color .25s ease, transform .25s ease;
     }
 
@@ -502,8 +739,10 @@
     }
 
     .status-mobile-socials svg {
+        display: block;
         width: 24px;
         height: 24px;
+        flex: 0 0 24px;
         fill: none;
         stroke: currentColor;
         stroke-width: 1.7;
@@ -517,7 +756,77 @@
         stroke: none;
     }
 
+
+    .status-mobile-socials a:nth-child(3) svg {
+        width: 27px;
+        height: 27px;
+        flex-basis: 27px;
+        transform: translateY(.5px);
+    }
+
+    .status-mobile-socials {
+        align-items: center;
+    }
+
+    .status-mobile-socials a {
+        width: 30px;
+        height: 30px;
+        flex: 0 0 30px;
+    }
+
+    .status-mobile-socials svg {
+        display: block;
+        width: 24px;
+        height: 24px;
+        flex: 0 0 24px;
+        margin: auto;
+    }
+
+    .status-mobile-socials a:nth-child(3) svg {
+        width: 29px;
+        height: 29px;
+        flex: 0 0 29px;
+        transform: translateY(0);
+    }
+
     @media(max-width:1024px) {
+        .status-service-card {
+            flex-basis: calc((100% - 44px) / 3);
+        }
+
+        .status-services-viewport {
+            padding-left: 28px;
+            padding-right: 28px;
+        }
+
+        .status-services-toolbar {
+            padding-left: 28px;
+            padding-right: 28px;
+        }
+
+        .status-services {
+            padding-top: 86px;
+            padding-bottom: 110px;
+        }
+
+        .status-services h2 {
+            max-width: 680px;
+            font-size: clamp(44px,6vw,58px);
+        }
+
+        .status-service-body {
+            padding: 22px 20px 24px;
+        }
+
+        .status-service-card h3 {
+            font-size: clamp(28px,3.2vw,34px);
+        }
+
+        .status-service-card p {
+            font-size: 13px;
+            line-height: 1.58;
+        }
+
         .status-site {
             --status-page-padding: 28px;
         }
@@ -640,9 +949,38 @@
             margin-top: 13px;
         }
 
-        .status-intro-link {
+        .status-intro .status-button {
             margin-top: 25px;
-            font-size: 11px;
+        }
+
+        .status-services {
+            padding-top: 76px;
+            padding-bottom: 92px;
+        }
+
+        .status-services-track {
+            gap: 18px;
+            margin-top: 38px;
+            padding-right: 20px;
+        }
+
+        .status-service-card {
+            width: min(78vw,320px);
+        }
+
+        .status-service-card h3 {
+            margin-top: 20px;
+            font-size: 32px;
+        }
+
+        .status-service-card p {
+            margin-top: 12px;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .status-service-card .status-button {
+            margin-top: 18px;
         }
     }
 
@@ -669,6 +1007,2088 @@
             animation-duration: .01ms!important;
             animation-iteration-count: 1!important;
             transition-duration: .01ms!important;
+        }
+
+        .status-services {
+            padding-top: 76px;
+            padding-bottom: 92px;
+        }
+
+        .status-services-head,
+        .status-services-toolbar,
+        .status-services-viewport {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .status-services-toolbar {
+            margin-top: 24px;
+        }
+
+        .status-services-hint {
+            font-size: 10px;
+            letter-spacing: .08em;
+        }
+
+        .status-services-arrow {
+            width: 38px;
+            height: 38px;
+        }
+
+        .status-services-viewport {
+            margin-top: 30px;
+        }
+
+        .status-service-card {
+            flex-basis: 100%;
+        }
+
+        .status-service-image {
+            aspect-ratio: 16 / 10;
+        }
+
+        .status-service-body {
+            padding: 20px 18px 22px;
+        }
+
+        .status-service-card h3 {
+            font-size: 32px;
+            line-height: .98;
+        }
+
+        .status-service-card p {
+            margin-top: 11px;
+            font-size: 13px;
+            line-height: 1.58;
+        }
+
+        .status-service-card .status-button {
+            margin-top: 17px;
+        }
+
+        .status-services-dots {
+            margin-top: 26px;
+        }
+    }
+
+
+    /* =========================================================
+       SECÇÕES 4–7 | EXPLORAÇÕES ALTERNATIVAS DE SERVIÇOS
+       Tipografia preservada: Inter + Cormorant Garamond
+    ========================================================= */
+
+    .status-services-alt {
+        position: relative;
+        width: 100%;
+        padding: clamp(96px,8vw,138px) var(--status-page-padding);
+    }
+
+    .status-services-alt-inner {
+        width: min(100%,var(--status-max-width));
+        margin: 0 auto;
+    }
+
+    .status-services-alt-head {
+        max-width: 820px;
+        margin-bottom: clamp(46px,5vw,72px);
+    }
+
+    .status-services-alt-label {
+        display: block;
+        margin-bottom: 16px;
+        font-family: "Inter",Arial,sans-serif!important;
+        font-size: 11px;
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+        color: var(--status-gold)!important;
+    }
+
+    .status-services-alt h2 {
+        margin: 0;
+        font-family: "Cormorant Garamond",Georgia,serif!important;
+        font-size: clamp(44px,4.5vw,68px);
+        font-weight: 400;
+        line-height: .98;
+        letter-spacing: -.03em;
+        text-wrap: balance;
+    }
+
+    .status-services-alt-intro {
+        max-width: 620px;
+        margin: 22px 0 0;
+        font-family: "Inter",Arial,sans-serif!important;
+        font-size: 15px;
+        line-height: 1.65;
+        text-wrap: pretty;
+    }
+
+
+    /* ---------------------------------------------------------
+       SECÇÃO 4 | Todos os serviços visíveis
+    --------------------------------------------------------- */
+
+    .status-services-grid {
+        background: #e7e2da;
+        color: var(--status-dark);
+    }
+
+    .status-services-grid-list {
+        display: grid;
+        grid-template-columns: repeat(5,minmax(0,1fr));
+        gap: 16px;
+    }
+
+    .status-services-grid-card {
+        min-width: 0;
+        background: rgba(255,255,255,.52);
+        border: 1px solid rgba(23,23,23,.10);
+        transition: transform .35s ease,border-color .35s ease,background-color .35s ease;
+        overflow: hidden;
+    }
+
+    .status-services-grid-image {
+        aspect-ratio: 4/5;
+        background-size: cover;
+        background-position: center;
+        transition: transform .6s cubic-bezier(.22,.61,.36,1),filter .4s ease;
+    }
+
+    .status-services-grid-card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(176,138,98,.55);
+        background: rgba(255,255,255,.76);
+    }
+
+    .status-services-grid-card:hover .status-services-grid-image {
+        transform: scale(1.04);
+        filter: saturate(1.05);
+    }
+
+    .status-services-grid-body {
+        padding: 22px 20px 24px;
+    }
+
+    .status-services-grid-card h3 {
+        margin: 0;
+        font-family: "Cormorant Garamond",Georgia,serif!important;
+        font-size: clamp(25px,1.9vw,34px);
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: -.02em;
+        color: var(--status-dark)!important;
+    }
+
+    .status-services-grid-card p {
+        margin: 13px 0 0;
+        font-family: "Inter",Arial,sans-serif!important;
+        font-size: 13px;
+        line-height: 1.58;
+        color: rgba(23,23,23,.65);
+        text-wrap: pretty;
+    }
+
+    .status-services-grid-card .status-button {
+        margin-top: 18px;
+        min-height: 38px;
+        padding: 10px 13px;
+        font-size: 11px;
+    }
+
+
+    /* ---------------------------------------------------------
+       SECÇÃO 5 | Índice editorial interativo
+    --------------------------------------------------------- */
+
+    .status-services-editorial {
+        background: #1b1b1a;
+        color: #f3f0ea;
+    }
+
+    .status-services-editorial h2 {
+        color: #f3f0ea!important;
+    }
+
+    .status-services-editorial .status-services-alt-intro {
+        color: rgba(243,240,234,.62);
+    }
+
+    .status-services-editorial-layout {
+        display: grid;
+        grid-template-columns: minmax(300px,.9fr) minmax(480px,1.4fr);
+        gap: clamp(48px,6vw,96px);
+        align-items: stretch;
+    }
+
+    .status-services-editorial-list {
+        display: flex;
+        flex-direction: column;
+        border-top: 1px solid rgba(243,240,234,.14);
+    }
+
+    .status-services-editorial-item {
+        width: 100%;
+        padding: 22px 0;
+        border: 0;
+        border-bottom: 1px solid rgba(243,240,234,.14);
+        background: transparent!important;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        cursor: pointer;
+        color: rgba(243,240,234,.55);
+        text-align: left;
+        transition: color .3s ease,padding-left .3s ease;
+    }
+
+    .status-services-editorial-item span:first-child {
+        font-family: "Cormorant Garamond",Georgia,serif!important;
+        font-size: clamp(28px,2.4vw,40px);
+        font-weight: 400;
+        line-height: 1;
+    }
+
+    .status-services-editorial-item span:last-child {
+        font-family: "Inter",Arial,sans-serif!important;
+        font-size: 11px;
+        letter-spacing: .08em;
+        color: var(--status-gold);
+    }
+
+    .status-services-editorial-item:hover,
+    .status-services-editorial-item:focus,
+    .status-services-editorial-item.is-active {
+        color: #f3f0ea;
+        padding-left: 12px;
+        outline: none;
+    }
+
+    .status-services-editorial-feature {
+        position: relative;
+        min-height: 620px;
+        overflow: hidden;
+        background: #111;
+    }
+
+    .status-services-editorial-visual {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        transition: background-image .25s ease,transform .7s ease;
+        transform: scale(1.001);
+    }
+
+    .status-services-editorial-feature:hover .status-services-editorial-visual {
+        transform: scale(1.035);
+    }
+
+    .status-services-editorial-shade {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(0deg,rgba(0,0,0,.78) 0%,rgba(0,0,0,.12) 62%,rgba(0,0,0,.02) 100%);
+    }
+
+    .status-services-editorial-copy {
+        position: absolute;
+        left: clamp(28px,3vw,48px);
+        right: clamp(28px,3vw,48px);
+        bottom: clamp(28px,3vw,46px);
+        z-index: 2;
+        max-width: 560px;
+    }
+
+    .status-services-editorial-copy h3 {
+        margin: 0;
+        font-family: "Cormorant Garamond",Georgia,serif!important;
+        font-size: clamp(38px,3.4vw,56px);
+        font-weight: 400;
+        line-height: .98;
+        color: #fff!important;
+    }
+
+    .status-services-editorial-copy p {
+        margin: 16px 0 0;
+        font-family: "Inter",Arial,sans-serif!important;
+        font-size: 14px;
+        line-height: 1.62;
+        color: rgba(255,255,255,.72);
+        text-wrap: pretty;
+    }
+
+
+    /* ---------------------------------------------------------
+       SECÇÃO 6 | Accordion visual
+    --------------------------------------------------------- */
+
+    .status-services-accordion {
+        background: var(--status-cream);
+        color: var(--status-dark);
+    }
+
+    .status-services-accordion-list {
+        display: flex;
+        width: 100%;
+        height: 620px;
+        gap: 10px;
+        overflow: hidden;
+    }
+
+    .status-services-accordion-card {
+        position: relative;
+        flex: 1 1 0;
+        min-width: 0;
+        overflow: hidden;
+        cursor: pointer;
+        border: 1px solid rgba(23,23,23,.10);
+        transition: flex .65s cubic-bezier(.22,.61,.36,1),border-color .3s ease;
+        background: #d9d3ca;
+    }
+
+    .status-services-accordion-card.is-active,
+    .status-services-accordion-card:hover {
+        flex: 2.65 1 0;
+        border-color: rgba(176,138,98,.55);
+    }
+
+    .status-services-accordion-image {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        transform: scale(1.01);
+        transition: transform .7s ease;
+    }
+
+    .status-services-accordion-card:hover .status-services-accordion-image,
+    .status-services-accordion-card.is-active .status-services-accordion-image {
+        transform: scale(1.045);
+    }
+
+    .status-services-accordion-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(0deg,rgba(0,0,0,.76) 0%,rgba(0,0,0,.12) 70%);
+    }
+
+    .status-services-accordion-content {
+        position: absolute;
+        left: 24px;
+        right: 24px;
+        bottom: 26px;
+        z-index: 2;
+        color: #fff;
+    }
+
+    .status-services-accordion-content h3 {
+        margin: 0;
+        font-family: "Cormorant Garamond",Georgia,serif!important;
+        font-size: clamp(27px,2.2vw,39px);
+        font-weight: 400;
+        line-height: 1;
+        color: #fff!important;
+    }
+
+    .status-services-accordion-content p,
+    .status-services-accordion-content .status-button {
+        opacity: 0;
+        transform: translateY(10px);
+        pointer-events: none;
+        transition: opacity .35s ease,transform .35s ease;
+    }
+
+    .status-services-accordion-content p {
+        max-width: 400px;
+        margin: 14px 0 0;
+        font-family: "Inter",Arial,sans-serif!important;
+        font-size: 13px;
+        line-height: 1.58;
+        color: rgba(255,255,255,.76);
+    }
+
+    .status-services-accordion-content .status-button {
+        margin-top: 18px;
+        color: #fff!important;
+        border-color: rgba(255,255,255,.48);
+    }
+
+    .status-services-accordion-card.is-active p,
+    .status-services-accordion-card.is-active .status-button,
+    .status-services-accordion-card:hover p,
+    .status-services-accordion-card:hover .status-button {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+
+    /* ---------------------------------------------------------
+       SECÇÃO 7 | Editorial alternado / manifesto
+    --------------------------------------------------------- */
+
+    .status-services-story {
+        background: #d9d3ca;
+        color: var(--status-dark);
+    }
+
+    .status-services-story-list {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(70px,8vw,118px);
+    }
+
+    .status-services-story-item {
+        display: grid;
+        grid-template-columns: minmax(0,1.35fr) minmax(300px,.65fr);
+        gap: clamp(42px,6vw,92px);
+        align-items: center;
+    }
+
+    .status-services-story-item:nth-child(even) {
+        grid-template-columns: minmax(300px,.65fr) minmax(0,1.35fr);
+    }
+
+    .status-services-story-item:nth-child(even) .status-services-story-image {
+        order: 2;
+    }
+
+    .status-services-story-image {
+        min-height: 540px;
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+        transition: transform .5s ease,box-shadow .5s ease;
+    }
+
+    .status-services-story-item:hover .status-services-story-image {
+        transform: scale(1.012);
+        box-shadow: 0 26px 70px rgba(23,23,23,.10);
+    }
+
+    .status-services-story-copy {
+        max-width: 480px;
+    }
+
+    .status-services-story-number {
+        display: block;
+        margin-bottom: 18px;
+        font-family: "Inter",Arial,sans-serif!important;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: .14em;
+        color: var(--status-gold);
+    }
+
+    .status-services-story-copy h3 {
+        margin: 0;
+        font-family: "Cormorant Garamond",Georgia,serif!important;
+        font-size: clamp(42px,4vw,64px);
+        font-weight: 400;
+        line-height: .96;
+        letter-spacing: -.025em;
+        color: var(--status-dark)!important;
+    }
+
+    .status-services-story-copy p {
+        margin: 20px 0 0;
+        font-family: "Inter",Arial,sans-serif!important;
+        font-size: 14px;
+        line-height: 1.68;
+        color: rgba(23,23,23,.67);
+        text-wrap: pretty;
+    }
+
+    .status-services-story-copy .status-button {
+        margin-top: 24px;
+    }
+
+
+    /* Shared service images */
+    .status-alt-image-assessment {
+        background-image: url('https://ginasiostatus.pt/wp-content/uploads/2026/09/rececao.png');
+    }
+
+    .status-alt-image-pt {
+        background-image: url('https://ginasiostatus.pt/wp-content/uploads/2026/08/entrada-.png');
+    }
+
+    .status-alt-image-classes {
+        background-image: url('https://ginasiostatus.pt/wp-content/uploads/2026/08/entrada-.png');
+        background-position: 62% center;
+    }
+
+    .status-alt-image-room {
+        background-image: url('https://ginasiostatus.pt/wp-content/uploads/2026/09/rececao.png');
+        background-position: 58% center;
+    }
+
+    .status-alt-image-group {
+        background-image: url('https://ginasiostatus.pt/wp-content/uploads/2026/09/rececao.png');
+        background-position: 40% center;
+    }
+
+
+    @media(max-width:1024px) {
+
+        .status-services-grid-list {
+            grid-template-columns: repeat(2,minmax(0,1fr));
+        }
+
+        .status-services-grid-card:last-child {
+            grid-column: 1 / -1;
+            width: calc(50% - 8px);
+            justify-self: center;
+        }
+
+        .status-services-editorial-layout {
+            grid-template-columns: .85fr 1.15fr;
+            gap: 36px;
+        }
+
+        .status-services-editorial-feature {
+            min-height: 560px;
+        }
+
+        .status-services-accordion-list {
+            height: 560px;
+        }
+
+        .status-services-story-item,
+        .status-services-story-item:nth-child(even) {
+            grid-template-columns: 1fr 1fr;
+            gap: 38px;
+        }
+
+        .status-services-story-image {
+            min-height: 460px;
+        }
+
+    }
+
+
+    @media(max-width:767px) {
+
+        .status-services-alt {
+            padding: 78px 20px 90px;
+        }
+
+        .status-services-alt-head {
+            margin-bottom: 38px;
+        }
+
+        .status-services-alt h2 {
+            font-size: clamp(40px,11vw,50px);
+        }
+
+        .status-services-alt-intro {
+            margin-top: 18px;
+            font-size: 14px;
+        }
+
+        .status-services-grid-list {
+            display: flex;
+            overflow-x: auto;
+            gap: 16px;
+            margin-right: -20px;
+            padding-right: 20px;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+        }
+
+        .status-services-grid-list::-webkit-scrollbar {
+            display: none;
+        }
+
+        .status-services-grid-card,
+        .status-services-grid-card:last-child {
+            flex: 0 0 min(82vw,330px);
+            width: auto;
+            scroll-snap-align: start;
+        }
+
+        .status-services-editorial-layout {
+            display: block;
+        }
+
+        .status-services-editorial-list {
+            margin-bottom: 30px;
+        }
+
+        .status-services-editorial-item {
+            padding: 16px 0;
+        }
+
+        .status-services-editorial-item span:first-child {
+            font-size: 30px;
+        }
+
+        .status-services-editorial-feature {
+            min-height: 520px;
+        }
+
+        .status-services-accordion-list {
+            display: flex;
+            height: auto;
+            overflow-x: auto;
+            gap: 14px;
+            margin-right: -20px;
+            padding-right: 20px;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+        }
+
+        .status-services-accordion-list::-webkit-scrollbar {
+            display: none;
+        }
+
+        .status-services-accordion-card,
+        .status-services-accordion-card.is-active,
+        .status-services-accordion-card:hover {
+            flex: 0 0 min(84vw,340px);
+            height: 520px;
+            scroll-snap-align: start;
+        }
+
+        .status-services-accordion-content p,
+        .status-services-accordion-content .status-button {
+            opacity: 1;
+            transform: none;
+            pointer-events: auto;
+        }
+
+        .status-services-story-list {
+            gap: 68px;
+        }
+
+        .status-services-story-item,
+        .status-services-story-item:nth-child(even) {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .status-services-story-item:nth-child(even) .status-services-story-image {
+            order: 0;
+        }
+
+        .status-services-story-image {
+            width: 100%;
+            min-height: 420px;
+        }
+
+        .status-services-story-copy {
+            max-width: none;
+        }
+
+        .status-services-story-copy h3 {
+            font-size: 44px;
+        }
+
+    }
+
+
+    /* =========================================================
+       SECÇÕES 8–11 | MAIS 4 ALTERNATIVAS DE SERVIÇOS
+    ========================================================= */
+
+    /* ---------------------------------------------------------
+       SECÇÃO 8 | Mosaico editorial
+    --------------------------------------------------------- */
+    .status-services-mosaic {
+        background: #f3f0ea;
+        color: var(--status-dark);
+    }
+
+    .status-services-mosaic-grid {
+        display: grid;
+        grid-template-columns: repeat(12,minmax(0,1fr));
+        grid-auto-rows: 220px;
+        gap: 18px;
+    }
+
+    .status-services-mosaic-card {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(23,23,23,.10);
+        background: #d9d3ca;
+        min-height: 0;
+    }
+
+    .status-services-mosaic-card:nth-child(1) {
+        grid-column: span 5;
+        grid-row: span 2;
+    }
+
+    .status-services-mosaic-card:nth-child(2) {
+        grid-column: span 7;
+    }
+
+    .status-services-mosaic-card:nth-child(3) {
+        grid-column: span 4;
+    }
+
+    .status-services-mosaic-card:nth-child(4) {
+        grid-column: span 3;
+    }
+
+    .status-services-mosaic-card:nth-child(5) {
+        grid-column: span 5;
+    }
+
+    .status-services-mosaic-image {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        transform: scale(1.01);
+        transition: transform .65s cubic-bezier(.22,.61,.36,1),filter .4s ease;
+    }
+
+    .status-services-mosaic-card:hover .status-services-mosaic-image {
+        transform: scale(1.055);
+        filter: saturate(1.05);
+    }
+
+    .status-services-mosaic-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(0deg,rgba(0,0,0,.74) 0%,rgba(0,0,0,.08) 70%);
+    }
+
+    .status-services-mosaic-copy {
+        position: absolute;
+        left: 22px;
+        right: 22px;
+        bottom: 22px;
+        z-index: 2;
+        color: #fff;
+    }
+
+    .status-services-mosaic-copy h3 {
+        margin: 0;
+        font-family: "Cormorant Garamond",Georgia,serif!important;
+        font-size: clamp(28px,2.4vw,42px);
+        font-weight: 400;
+        line-height: .98;
+        color: #fff!important;
+    }
+
+    .status-services-mosaic-copy p {
+        max-width: 480px;
+        margin: 10px 0 0;
+        font-family: "Inter",Arial,sans-serif!important;
+        font-size: 13px;
+        line-height: 1.55;
+        color: rgba(255,255,255,.74);
+        opacity: .86;
+    }
+
+
+    /* ---------------------------------------------------------
+       SECÇÃO 9 | Bandas horizontais
+    --------------------------------------------------------- */
+    .status-services-bands {
+        background: #e3ddd4;
+        color: var(--status-dark);
+    }
+
+    .status-services-bands-list {
+        border-top: 1px solid rgba(23,23,23,.13);
+    }
+
+    .status-services-band {
+        display: grid;
+        grid-template-columns: 90px minmax(260px,.75fr) minmax(360px,1.25fr);
+        gap: 34px;
+        align-items: center;
+        min-height: 150px;
+        border-bottom: 1px solid rgba(23,23,23,.13);
+        transition: background-color .3s ease,padding .3s ease;
+        overflow: hidden;
+    }
+
+    .status-services-band:hover {
+        background: rgba(255,255,255,.34);
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .status-services-band-number {
+        font-family: "Inter",Arial,sans-serif!important;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: .14em;
+        color: var(--status-gold);
+    }
+
+    .status-services-band h3 {
+        margin: 0;
+        font-family: "Cormorant Garamond",Georgia,serif!important;
+        font-size: clamp(32px,3vw,48px);
+        font-weight: 400;
+        line-height: .98;
+        color: var(--status-dark)!important;
+    }
+
+    .status-services-band-right {
+        display: grid;
+        grid-template-columns: minmax(0,1fr) 180px;
+        gap: 28px;
+        align-items: center;
+    }
+
+    .status-services-band p {
+        margin: 0;
+        font-family: "Inter",Arial,sans-serif!important;
+        font-size: 13px;
+        line-height: 1.58;
+        color: rgba(23,23,23,.64);
+        text-wrap: pretty;
+    }
+
+    .status-services-band-thumb {
+        height: 110px;
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+        transition: transform .45s ease;
+    }
+
+    .status-services-band:hover .status-services-band-thumb {
+        transform: scale(1.035);
+    }
+
+
+    /* ---------------------------------------------------------
+       SECÇÃO 10 | Selector + painel
+    --------------------------------------------------------- */
+    .status-services-tabs {
+        background: #1b1b1a;
+        color: #f3f0ea;
+    }
+
+    .status-services-tabs h2 {
+        color: #f3f0ea!important;
+    }
+
+    .status-services-tabs .status-services-alt-intro {
+        color: rgba(243,240,234,.62);
+    }
+
+    .status-services-tabs-nav {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 28px;
+    }
+
+    .status-services-tab {
+        padding: 11px 14px;
+        border: 1px solid rgba(243,240,234,.18);
+        background: transparent!important;
+        color: rgba(243,240,234,.58);
+        font-family: "Inter",Arial,sans-serif!important;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: .05em;
+        cursor: pointer;
+        transition: color .25s ease,border-color .25s ease,background-color .25s ease;
+    }
+
+    .status-services-tab:hover,
+    .status-services-tab.is-active {
+        color: #fff;
+        border-color: var(--status-gold);
+        background: rgba(176,138,98,.08)!important;
+    }
+
+    .status-services-tabs-panel {
+        display: grid;
+        grid-template-columns: minmax(0,1.25fr) minmax(340px,.75fr);
+        min-height: 570px;
+        border: 1px solid rgba(243,240,234,.12);
+        overflow: hidden;
+    }
+
+    .status-services-tabs-visual {
+        background-size: cover;
+        background-position: center;
+        min-height: 570px;
+        transition: background-image .25s ease,transform .55s ease;
+    }
+
+    .status-services-tabs-panel:hover .status-services-tabs-visual {
+        transform: scale(1.015);
+    }
+
+    .status-services-tabs-copy {
+        padding: clamp(34px,4vw,58px);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        background: #20201f;
+    }
+
+    .status-services-tabs-copy h3 {
+        margin: 0;
+        font-family: "Cormorant Garamond",Georgia,serif!important;
+        font-size: clamp(42px,4vw,62px);
+        font-weight: 400;
+        line-height: .96;
+        color: #fff!important;
+    }
+
+    .status-services-tabs-copy p {
+        margin: 18px 0 0;
+        font-family: "Inter",Arial,sans-serif!important;
+        font-size: 14px;
+        line-height: 1.66;
+        color: rgba(255,255,255,.68);
+        text-wrap: pretty;
+    }
+
+    .status-services-tabs-copy .status-button {
+        align-self: flex-start;
+        margin-top: 24px;
+        color: #fff!important;
+        border-color: rgba(255,255,255,.4);
+    }
+
+
+    /* ---------------------------------------------------------
+       SECÇÃO 11 | Minimal typographic
+    --------------------------------------------------------- */
+    .status-services-type {
+        background: #d9d3ca;
+        color: var(--status-dark);
+    }
+
+    .status-services-type-list {
+        display: grid;
+        grid-template-columns: repeat(2,minmax(0,1fr));
+        border-top: 1px solid rgba(23,23,23,.14);
+        border-left: 1px solid rgba(23,23,23,.14);
+    }
+
+    .status-services-type-card {
+        min-height: 290px;
+        padding: 30px;
+        border-right: 1px solid rgba(23,23,23,.14);
+        border-bottom: 1px solid rgba(23,23,23,.14);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: background-color .3s ease,color .3s ease;
+    }
+
+    .status-services-type-card:nth-child(5) {
+        grid-column: 1 / -1;
+        min-height: 240px;
+    }
+
+    .status-services-type-card:hover {
+        background: var(--status-dark);
+        color: #f3f0ea;
+    }
+
+    .status-services-type-top {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        align-items: flex-start;
+    }
+
+    .status-services-type-number {
+        font-family: "Inter",Arial,sans-serif!important;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: .14em;
+        color: var(--status-gold);
+    }
+
+    .status-services-type-card h3 {
+        max-width: 420px;
+        margin: 0;
+        font-family: "Cormorant Garamond",Georgia,serif!important;
+        font-size: clamp(36px,3.6vw,56px);
+        font-weight: 400;
+        line-height: .95;
+        color: var(--status-dark)!important;
+        transition: color .3s ease;
+    }
+
+    .status-services-type-card:hover h3 {
+        color: #fff!important;
+    }
+
+    .status-services-type-card p {
+        max-width: 520px;
+        margin: 30px 0 0;
+        font-family: "Inter",Arial,sans-serif!important;
+        font-size: 13px;
+        line-height: 1.62;
+        color: rgba(23,23,23,.62);
+        transition: color .3s ease;
+    }
+
+    .status-services-type-card:hover p {
+        color: rgba(255,255,255,.68);
+    }
+
+
+    @media(max-width:1024px) {
+
+        .status-services-mosaic-grid {
+            grid-template-columns: repeat(6,minmax(0,1fr));
+            grid-auto-rows: 210px;
+        }
+
+        .status-services-mosaic-card:nth-child(1),
+        .status-services-mosaic-card:nth-child(2),
+        .status-services-mosaic-card:nth-child(3),
+        .status-services-mosaic-card:nth-child(4),
+        .status-services-mosaic-card:nth-child(5) {
+            grid-column: span 3;
+            grid-row: span 1;
+        }
+
+        .status-services-mosaic-card:nth-child(5) {
+            grid-column: 2 / span 4;
+        }
+
+        .status-services-band {
+            grid-template-columns: 60px minmax(220px,.8fr) minmax(0,1.2fr);
+            gap: 22px;
+        }
+
+        .status-services-band-right {
+            grid-template-columns: minmax(0,1fr) 130px;
+            gap: 18px;
+        }
+
+        .status-services-tabs-panel {
+            grid-template-columns: 1.1fr .9fr;
+            min-height: 500px;
+        }
+
+        .status-services-tabs-visual {
+            min-height: 500px;
+        }
+
+    }
+
+
+    @media(max-width:767px) {
+
+        .status-services-mosaic-grid {
+            display: flex;
+            overflow-x: auto;
+            gap: 14px;
+            margin-right: -20px;
+            padding-right: 20px;
+            scrollbar-width: none;
+            scroll-snap-type: x mandatory;
+        }
+
+        .status-services-mosaic-grid::-webkit-scrollbar {
+            display: none;
+        }
+
+        .status-services-mosaic-card,
+        .status-services-mosaic-card:nth-child(1),
+        .status-services-mosaic-card:nth-child(2),
+        .status-services-mosaic-card:nth-child(3),
+        .status-services-mosaic-card:nth-child(4),
+        .status-services-mosaic-card:nth-child(5) {
+            flex: 0 0 min(84vw,340px);
+            min-height: 470px;
+            grid-column: auto;
+            grid-row: auto;
+            scroll-snap-align: start;
+        }
+
+        .status-services-band {
+            grid-template-columns: 42px minmax(0,1fr);
+            gap: 14px;
+            min-height: 0;
+            padding: 22px 0;
+        }
+
+        .status-services-band:hover {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .status-services-band-right {
+            grid-column: 2;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        .status-services-band-thumb {
+            height: 180px;
+        }
+
+        .status-services-tabs-nav {
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            margin-right: -20px;
+            padding-right: 20px;
+            scrollbar-width: none;
+        }
+
+        .status-services-tabs-nav::-webkit-scrollbar {
+            display: none;
+        }
+
+        .status-services-tab {
+            flex: 0 0 auto;
+        }
+
+        .status-services-tabs-panel {
+            display: block;
+            min-height: 0;
+        }
+
+        .status-services-tabs-visual {
+            min-height: 360px;
+        }
+
+        .status-services-tabs-copy {
+            padding: 26px 22px 28px;
+        }
+
+        .status-services-type-list {
+            display: block;
+            border-left: 1px solid rgba(23,23,23,.14);
+        }
+
+        .status-services-type-card,
+        .status-services-type-card:nth-child(5) {
+            min-height: 250px;
+            grid-column: auto;
+        }
+
+        .status-services-type-card {
+            padding: 24px 20px;
+        }
+
+        .status-services-type-card h3 {
+            font-size: 40px;
+        }
+
+    }
+
+
+    /* =========================================================
+       AJUSTES DEFINITIVOS | SECÇÃO 3
+    ========================================================= */
+
+    @media (min-width:768px) and (max-width:1024px) {
+        .status-services-track {
+            gap: 18px !important;
+        }
+
+        .status-service-card {
+            flex: 0 0 calc((100% - 36px) / 3) !important;
+            min-width: 0 !important;
+        }
+
+        .status-service-image {
+            aspect-ratio: 4 / 3 !important;
+        }
+
+        .status-service-body {
+            padding: 18px 16px 20px !important;
+        }
+
+        .status-service-card h3 {
+            font-size: clamp(25px,3vw,31px) !important;
+        }
+
+        .status-service-card p {
+            font-size: 12px !important;
+            line-height: 1.52 !important;
+        }
+
+        .status-service-card .status-button {
+            margin-top: 16px !important;
+            min-height: 38px !important;
+            padding: 10px 12px !important;
+            font-size: 10px !important;
+        }
+    }
+
+    @media (max-width:767px) {
+        .status-services-track {
+            gap: 14px !important;
+        }
+
+        .status-service-card {
+            flex: 0 0 100% !important;
+            width: 100% !important;
+            min-width: 100% !important;
+            max-width: 100% !important;
+        }
+
+        .status-service-image {
+            aspect-ratio: 16 / 9 !important;
+        }
+
+        .status-services-viewport {
+            overflow: hidden !important;
+        }
+
+        .status-service-body {
+            padding: 18px 17px 20px !important;
+        }
+
+        .status-service-card h3 {
+            font-size: 31px !important;
+        }
+
+        .status-service-card p {
+            font-size: 12.5px !important;
+            line-height: 1.55 !important;
+        }
+
+        .status-service-card .status-button {
+            margin-top: 16px !important;
+        }
+    }
+
+
+    /* =========================================================
+       ALTERNATIVA 1 | MOBILE MAIS COMPACTO
+    ========================================================= */
+
+    @media (max-width:767px) {
+        .status-services-grid-list {
+            align-items: stretch;
+        }
+
+        .status-services-grid-card,
+        .status-services-grid-card:last-child {
+            flex: 0 0 min(84vw,330px) !important;
+            min-height: 0 !important;
+            height: auto !important;
+        }
+
+        .status-services-grid-image {
+            height: min(31svh,235px) !important;
+            aspect-ratio: auto !important;
+        }
+
+        .status-services-grid-body {
+            padding: 17px 16px 19px !important;
+        }
+
+        .status-services-grid-card h3 {
+            font-size: 29px !important;
+        }
+
+        .status-services-grid-card p {
+            margin-top: 10px !important;
+            font-size: 12px !important;
+            line-height: 1.5 !important;
+        }
+
+        .status-services-grid-card .status-button {
+            margin-top: 14px !important;
+        }
+    }
+
+
+    /* =========================================================
+       ALTERNATIVA 3 | CARROSSEL INFINITO
+    ========================================================= */
+
+    .status-services-accordion-controls {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        margin-bottom: 22px;
+    }
+
+    .status-services-accordion-arrow {
+        width: 42px;
+        height: 42px;
+        border: 1px solid rgba(23,23,23,.20);
+        border-radius: 50%;
+        background: transparent !important;
+        color: var(--status-dark);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Inter",Arial,sans-serif!important;
+        font-size: 18px;
+        line-height: 1;
+        cursor: pointer;
+    }
+
+    .status-services-accordion-list {
+        height: auto !important;
+        overflow: hidden !important;
+        gap: 18px !important;
+        transition: transform .55s cubic-bezier(.22,.61,.36,1);
+        will-change: transform;
+    }
+
+    .status-services-accordion-card,
+    .status-services-accordion-card.is-active,
+    .status-services-accordion-card:hover {
+        flex: 0 0 calc((100% - 36px) / 3) !important;
+        height: 560px !important;
+    }
+
+    @media (min-width:768px) and (max-width:1024px) {
+        .status-services-accordion-card,
+        .status-services-accordion-card.is-active,
+        .status-services-accordion-card:hover {
+            flex-basis: calc((100% - 18px) / 2) !important;
+            height: 520px !important;
+        }
+    }
+
+    @media (max-width:767px) {
+        .status-services-accordion-controls {
+            margin-bottom: 18px;
+        }
+
+        .status-services-accordion-card,
+        .status-services-accordion-card.is-active,
+        .status-services-accordion-card:hover {
+            flex: 0 0 100% !important;
+            width: 100% !important;
+            min-width: 100% !important;
+            height: min(68svh,520px) !important;
+            scroll-snap-align: none !important;
+        }
+
+        .status-services-accordion-list {
+            margin-right: 0 !important;
+            padding-right: 0 !important;
+            overflow: hidden !important;
+            scroll-snap-type: none !important;
+            gap: 14px !important;
+        }
+    }
+
+    /* =========================================================
+       SERVIÇOS | VERSÃO FINAL
+       Desktop: lista horizontal elegante
+       Tablet/Mobile: scroll horizontal
+       Tipografia: Inter + Cormorant Garamond
+    ========================================================= */
+
+    .status-services-final {
+        position: relative;
+        width: 100%;
+        background: var(--status-cream);
+        color: var(--status-dark);
+        padding: clamp(94px,8vw,138px) var(--status-page-padding)
+                 clamp(106px,9vw,150px);
+        overflow: hidden;
+    }
+
+    .status-services-final-inner {
+        width: min(100%,var(--status-max-width));
+        margin: 0 auto;
+    }
+
+    .status-services-final-head {
+        max-width: 840px;
+        margin-bottom: clamp(50px,5vw,72px);
+    }
+
+    .status-services-final-eyebrow {
+        display: block;
+        margin-bottom: 16px;
+        font-family: "Inter",Arial,sans-serif!important;
+        font-size: 11px;
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+        color: var(--status-gold)!important;
+    }
+
+    .status-services-final h2 {
+        margin: 0;
+        font-family: "Cormorant Garamond",Georgia,serif!important;
+        font-size: clamp(46px,4.8vw,72px);
+        font-weight: 400;
+        line-height: .98;
+        letter-spacing: -.03em;
+        color: var(--status-dark)!important;
+        text-wrap: balance;
+    }
+
+    .status-services-final-list {
+        display: grid;
+        grid-template-columns: repeat(5,minmax(0,1fr));
+        gap: 0;
+        border-top: 1px solid rgba(23,23,23,.13);
+        border-bottom: 1px solid rgba(23,23,23,.13);
+    }
+
+    .status-services-final-item {
+        position: relative;
+        min-width: 0;
+        padding: 22px 18px 26px;
+        border-right: 1px solid rgba(23,23,23,.11);
+        transition: background-color .35s ease;
+    }
+
+    .status-services-final-item:first-child {
+        padding-left: 0;
+    }
+
+    .status-services-final-item:last-child {
+        border-right: 0;
+        padding-right: 0;
+    }
+
+    .status-services-final-item:hover {
+        background: rgba(255,255,255,.28);
+    }
+
+    .status-services-final-image {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+        transform: scale(1);
+        transition:
+            transform .6s cubic-bezier(.22,.61,.36,1),
+            filter .4s ease;
+        transform-origin: center;
+    }
+
+    .status-services-final-item:hover .status-services-final-image {
+        transform: scale(1.025);
+        filter: saturate(1.04) contrast(1.02);
+    }
+
+    .status-services-final-copy {
+        padding-top: 22px;
+        max-width: 100%;
+    }
+
+    .status-services-final-copy h3 {
+        margin: 0;
+        min-height: 1.9em;
+        font-family: "Cormorant Garamond",Georgia,serif!important;
+        font-size: clamp(26px,1.9vw,34px);
+        font-weight: 400;
+        line-height: .98;
+        letter-spacing: -.02em;
+        color: var(--status-dark)!important;
+        transition: color .3s ease;
+    }
+
+    .status-services-final-item:hover h3 {
+        color: var(--status-gold)!important;
+    }
+
+    .status-services-final-copy p {
+        margin: 14px 0 0;
+        min-height: 8.8em;
+        font-family: "Inter",Arial,sans-serif!important;
+        font-size: 12.5px;
+        font-weight: 400;
+        line-height: 1.58;
+        color: rgba(23,23,23,.64);
+        text-wrap: pretty;
+    }
+
+    @media(max-width:1200px) and (min-width:768px) {
+
+        .status-services-final-list {
+            display: flex;
+            gap: 18px;
+            overflow-x: auto;
+            margin-right: calc(var(--status-page-padding) * -1);
+            padding-right: var(--status-page-padding);
+            border-bottom: 0;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+        }
+
+        .status-services-final-list::-webkit-scrollbar {
+            display: none;
+        }
+
+        .status-services-final-item,
+        .status-services-final-item:first-child,
+        .status-services-final-item:last-child {
+            flex: 0 0 calc((100% - 36px) / 3);
+            padding: 18px 0 24px;
+            border-right: 0;
+            border-bottom: 1px solid rgba(23,23,23,.13);
+            scroll-snap-align: start;
+        }
+
+        .status-services-final-image {
+            aspect-ratio: 4 / 5;
+        }
+
+        .status-services-final-copy h3 {
+            min-height: 0;
+            font-size: 31px;
+        }
+
+        .status-services-final-copy p {
+            min-height: 0;
+            font-size: 12.5px;
+        }
+    }
+
+    @media(max-width:767px) {
+
+        .status-services-final {
+            padding: 76px 20px 92px;
+        }
+
+        .status-services-final-head {
+            margin-bottom: 36px;
+        }
+
+        .status-services-final h2 {
+            font-size: clamp(40px,11vw,50px);
+        }
+
+        .status-services-final-list {
+            display: flex;
+            gap: 16px;
+            overflow-x: auto;
+            margin-right: -20px;
+            padding-right: 20px;
+            border-top: 0;
+            border-bottom: 0;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+        }
+
+        .status-services-final-list::-webkit-scrollbar {
+            display: none;
+        }
+
+        .status-services-final-item,
+        .status-services-final-item:first-child,
+        .status-services-final-item:last-child {
+            flex: 0 0 min(84vw,330px);
+            padding: 0;
+            border: 1px solid rgba(23,23,23,.10);
+            background: rgba(255,255,255,.48);
+            overflow: hidden;
+            scroll-snap-align: start;
+        }
+
+        .status-services-final-image {
+            width: 100%;
+            height: min(31svh,235px);
+            aspect-ratio: auto;
+        }
+
+        .status-services-final-copy {
+            padding: 17px 16px 19px;
+        }
+
+        .status-services-final-copy h3 {
+            min-height: 0;
+            font-size: 29px;
+        }
+
+        .status-services-final-copy p {
+            min-height: 0;
+            margin-top: 10px;
+            font-size: 12px;
+            line-height: 1.48;
+        }
+    }
+
+
+    /* =========================================================
+       SERVIÇOS | ALTERNATIVA HORIZONTAL EDITORIAL
+       Referência: galeria horizontal ampla, imagem dominante,
+       título + texto abaixo, com continuidade visual nas margens
+    ========================================================= */
+
+    .status-services-editorial-alt {
+        position: relative;
+        width: 100%;
+        background: #e4dfd5;
+        color: var(--status-dark);
+        padding: clamp(92px,8vw,132px) 0 clamp(94px,8vw,126px);
+        overflow: hidden;
+    }
+
+    .status-services-editorial-alt-head {
+        width: min(100%,var(--status-max-width));
+        margin: 0 auto;
+        padding: 0 var(--status-page-padding);
+        max-width: var(--status-max-width);
+    }
+
+    .status-services-editorial-alt-eyebrow {
+        display: block;
+        margin-bottom: 16px;
+        font-family: "Inter",Arial,sans-serif!important;
+        font-size: 11px;
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+        color: var(--status-gold)!important;
+    }
+
+    .status-services-editorial-alt h2 {
+        width: min(760px,100%);
+        margin: 0;
+        font-family: "Cormorant Garamond",Georgia,serif!important;
+        font-size: clamp(44px,4.6vw,68px);
+        font-weight: 400;
+        line-height: .98;
+        letter-spacing: -.03em;
+        color: var(--status-dark)!important;
+        text-wrap: balance;
+    }
+
+    .status-services-editorial-alt-viewport {
+        width: 100%;
+        margin-top: clamp(48px,5vw,70px);
+        overflow: hidden;
+    }
+
+    .status-services-editorial-alt-track {
+        display: flex;
+        gap: 24px;
+        width: max-content;
+        padding-left: max(0px,calc((100vw - var(--status-max-width))/2 + var(--status-page-padding)));
+        padding-right: var(--status-page-padding);
+        transition: transform .6s cubic-bezier(.22,.61,.36,1);
+        will-change: transform;
+    }
+
+    .status-services-editorial-alt-card {
+        flex: 0 0 clamp(300px,27vw,430px);
+        width: clamp(300px,27vw,430px);
+        min-width: 0;
+    }
+
+    .status-services-editorial-alt-image {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+        transform: scale(1);
+        transition: transform .65s cubic-bezier(.22,.61,.36,1),filter .4s ease;
+    }
+
+    .status-services-editorial-alt-card:hover .status-services-editorial-alt-image {
+        transform: scale(1.028);
+        filter: saturate(1.04) contrast(1.02);
+    }
+
+    .status-services-editorial-alt-copy {
+        padding-top: 18px;
+    }
+
+    .status-services-editorial-alt-copy h3 {
+        margin: 0;
+        font-family: "Cormorant Garamond",Georgia,serif!important;
+        font-size: clamp(28px,2.15vw,36px);
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: -.02em;
+        color: var(--status-dark)!important;
+        transition: color .3s ease;
+    }
+
+    .status-services-editorial-alt-card:hover h3 {
+        color: var(--status-gold)!important;
+    }
+
+    .status-services-editorial-alt-copy p {
+        margin: 13px 0 0;
+        max-width: 390px;
+        font-family: "Inter",Arial,sans-serif!important;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 1.58;
+        color: rgba(23,23,23,.66);
+        text-wrap: pretty;
+    }
+
+    .status-services-editorial-alt-footer {
+        width: min(100%,var(--status-max-width));
+        margin: 30px auto 0;
+        padding: 0 var(--status-page-padding);
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 18px;
+    }
+
+    .status-services-editorial-alt-arrow {
+        width: 40px;
+        height: 40px;
+        border: 1px solid rgba(23,23,23,.20);
+        border-radius: 50%;
+        background: transparent!important;
+        color: var(--status-dark);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        font-family: "Inter",Arial,sans-serif!important;
+        font-size: 18px;
+        line-height: 1;
+        cursor: pointer;
+        transition: color .25s ease,border-color .25s ease,background-color .25s ease;
+    }
+
+    .status-services-editorial-alt-arrow:hover,
+    .status-services-editorial-alt-arrow:focus {
+        color: var(--status-gold);
+        border-color: var(--status-gold);
+        background: rgba(176,138,98,.05)!important;
+        outline: none;
+    }
+
+    .status-services-editorial-alt-progress {
+        min-width: 54px;
+        text-align: center;
+        font-family: "Inter",Arial,sans-serif!important;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: .08em;
+        color: rgba(23,23,23,.68);
+    }
+
+    @media(max-width:1024px) and (min-width:768px) {
+        .status-services-editorial-alt-track {
+            gap: 18px;
+            padding-left: 28px;
+            padding-right: 28px;
+        }
+
+        .status-services-editorial-alt-card {
+            flex-basis: calc((100vw - 74px) / 2.45);
+            width: calc((100vw - 74px) / 2.45);
+        }
+
+        .status-services-editorial-alt-footer {
+            padding-left: 28px;
+            padding-right: 28px;
+        }
+    }
+
+    @media(max-width:767px) {
+        .status-services-editorial-alt {
+            padding-top: 76px;
+            padding-bottom: 86px;
+        }
+
+        .status-services-editorial-alt-head {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .status-services-editorial-alt h2 {
+            font-size: clamp(40px,11vw,50px);
+        }
+
+        .status-services-editorial-alt-viewport {
+            margin-top: 34px;
+        }
+
+        .status-services-editorial-alt-track {
+            gap: 16px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .status-services-editorial-alt-card {
+            flex: 0 0 min(82vw,330px);
+            width: min(82vw,330px);
+        }
+
+        .status-services-editorial-alt-image {
+            aspect-ratio: 4 / 4.35;
+        }
+
+        .status-services-editorial-alt-copy {
+            padding-top: 15px;
+        }
+
+        .status-services-editorial-alt-copy h3 {
+            font-size: 29px;
+        }
+
+        .status-services-editorial-alt-copy p {
+            margin-top: 10px;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .status-services-editorial-alt-footer {
+            margin-top: 24px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+
+
+    /* =========================================================
+       SERVIÇOS | ALTERNATIVA 2
+       Introdução + carrossel editorial infinito
+       Desktop 3 / Tablet 2 / Mobile 1
+    ========================================================= */
+
+    .status-services-gallery-alt {
+        position: relative;
+        width: 100%;
+        background: #f4f1eb;
+        color: var(--status-dark);
+        padding: clamp(92px,8vw,132px) 0 clamp(96px,8vw,128px);
+        overflow: hidden;
+    }
+
+    .status-services-gallery-alt-head {
+        width: min(100%,var(--status-max-width));
+        margin: 0 auto;
+        padding: 0 var(--status-page-padding);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .status-services-gallery-alt-eyebrow {
+        display: block;
+        margin-bottom: 16px;
+        font-family: "Inter",Arial,sans-serif!important;
+        font-size: 11px;
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+        color: var(--status-gold)!important;
+    }
+
+    .status-services-gallery-alt h2 {
+        width: min(760px,100%);
+        margin: 0;
+        font-family: "Cormorant Garamond",Georgia,serif!important;
+        font-size: clamp(44px,4.4vw,66px);
+        font-weight: 400;
+        line-height: .98;
+        letter-spacing: -.03em;
+        color: var(--status-dark)!important;
+        text-wrap: balance;
+    }
+
+    .status-services-gallery-alt-intro {
+        width: min(650px,100%);
+        margin: 20px 0 0;
+        font-family: "Inter",Arial,sans-serif!important;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.65;
+        color: rgba(23,23,23,.66);
+        text-wrap: pretty;
+    }
+
+    .status-services-gallery-alt-viewport {
+        width: min(100%,var(--status-max-width));
+        margin: clamp(46px,5vw,66px) auto 0;
+        padding: 0 var(--status-page-padding);
+        overflow: hidden;
+    }
+
+    .status-services-gallery-alt-track {
+        display: flex;
+        gap: clamp(20px,2vw,30px);
+        will-change: transform;
+    }
+
+    .status-services-gallery-alt-card {
+        flex: 0 0 calc((100% - (2 * clamp(20px,2vw,30px))) / 3);
+        min-width: 0;
+    }
+
+    .status-services-gallery-alt-image {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+        transform: scale(1);
+        transition: transform .65s cubic-bezier(.22,.61,.36,1),
+                    filter .4s ease;
+    }
+
+    .status-services-gallery-alt-card:hover .status-services-gallery-alt-image {
+        transform: scale(1.03);
+        filter: saturate(1.04) contrast(1.02);
+    }
+
+    .status-services-gallery-alt-copy {
+        padding-top: 18px;
+    }
+
+    .status-services-gallery-alt-copy h3 {
+        margin: 0;
+        font-family: "Cormorant Garamond",Georgia,serif!important;
+        font-size: clamp(28px,2.1vw,36px);
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: -.02em;
+        color: var(--status-dark)!important;
+    }
+
+    .status-services-gallery-alt-copy p {
+        margin: 12px 0 0;
+        font-family: "Inter",Arial,sans-serif!important;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 1.58;
+        color: rgba(23,23,23,.66);
+        text-wrap: pretty;
+    }
+
+    .status-services-gallery-alt-footer {
+        width: min(100%,var(--status-max-width));
+        margin: 30px auto 0;
+        padding: 0 var(--status-page-padding);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .status-services-gallery-alt-arrow {
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        border: 1px solid rgba(23,23,23,.18);
+        border-radius: 50%;
+        background: transparent!important;
+        color: var(--status-dark);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Inter",Arial,sans-serif!important;
+        font-size: 18px;
+        line-height: 1;
+        cursor: pointer;
+        transition: color .25s ease,border-color .25s ease,background-color .25s ease;
+    }
+
+    .status-services-gallery-alt-arrow:hover,
+    .status-services-gallery-alt-arrow:focus {
+        color: var(--status-gold);
+        border-color: var(--status-gold);
+        background: rgba(176,138,98,.05)!important;
+        outline: none;
+    }
+
+    .status-services-gallery-alt-progress {
+        min-width: 52px;
+        text-align: center;
+        font-family: "Inter",Arial,sans-serif!important;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: .08em;
+        color: rgba(23,23,23,.62);
+    }
+
+    @media(max-width:1024px) and (min-width:768px) {
+
+        .status-services-gallery-alt-viewport {
+            padding-left: 28px;
+            padding-right: 28px;
+        }
+
+        .status-services-gallery-alt-track {
+            gap: 20px;
+        }
+
+        .status-services-gallery-alt-card {
+            flex: 0 0 calc((100% - 20px) / 2);
+        }
+
+        .status-services-gallery-alt-footer {
+            padding-left: 28px;
+            padding-right: 28px;
+        }
+    }
+
+    @media(max-width:767px) {
+
+        .status-services-gallery-alt {
+            padding-top: 74px;
+            padding-bottom: 84px;
+        }
+
+        .status-services-gallery-alt-head {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .status-services-gallery-alt h2 {
+            font-size: clamp(40px,11vw,50px);
+        }
+
+        .status-services-gallery-alt-intro {
+            margin-top: 16px;
+            font-size: 13px;
+            line-height: 1.58;
+        }
+
+        .status-services-gallery-alt-viewport {
+            margin-top: 30px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .status-services-gallery-alt-track {
+            gap: 14px;
+        }
+
+        .status-services-gallery-alt-card {
+            flex: 0 0 100%;
+        }
+
+        .status-services-gallery-alt-image {
+            height: min(38svh,285px);
+            aspect-ratio: auto;
+        }
+
+        .status-services-gallery-alt-copy {
+            padding-top: 14px;
+        }
+
+        .status-services-gallery-alt-copy h3 {
+            font-size: 29px;
+        }
+
+        .status-services-gallery-alt-copy p {
+            margin-top: 9px;
+            font-size: 12px;
+            line-height: 1.48;
+        }
+
+        .status-services-gallery-alt-footer {
+            margin-top: 22px;
+            padding-left: 20px;
+            padding-right: 20px;
         }
     }
 
@@ -817,7 +3237,7 @@
             <div class="status-intro-inner">
 
                 <h2>
-                    Aqui, todos têm nome.
+                    Aqui, todos tem nome.
                 </h2>
 
                 <div class="status-intro-copy">
@@ -838,14 +3258,366 @@
 
                 <a
                     href="#servicos"
-                    class="status-intro-link"
+                    class="status-button"
                 >
-                    <span>Conhecer o Status</span>
-                    <span class="status-intro-link-arrow">↗︎</span>
+                    Conhecer o Status
                 </a>
 
             </div>
         </section>
+
+        
+
+
+        <!-- =====================================================
+             SECÇÃO 4 | ALTERNATIVA: TODOS VISÍVEIS
+        ====================================================== -->
+        
+
+
+        <!-- =====================================================
+             SECÇÃO 5 | ALTERNATIVA: ÍNDICE EDITORIAL
+        ====================================================== -->
+        
+
+
+        <!-- =====================================================
+             SECÇÃO 6 | ALTERNATIVA: ACCORDION VISUAL
+        ====================================================== -->
+        
+
+
+        <!-- =====================================================
+             SECÇÃO 7 | ALTERNATIVA: HISTÓRIA EDITORIAL
+        ====================================================== -->
+        
+
+
+        <!-- =====================================================
+             SECÇÃO 8 | ALTERNATIVA 5: MOSAICO EDITORIAL
+        ====================================================== -->
+                <section
+            class="status-services-final"
+            id="servicos"
+        >
+            <div class="status-services-final-inner">
+
+                <div class="status-services-final-head">
+                    <span class="status-services-final-eyebrow">
+                        Serviços
+                    </span>
+
+                    <h2>
+                        Serviços pensados para acompanhar a tua evolução.
+                    </h2>
+                </div>
+
+                <div class="status-services-final-list">
+
+                    <article class="status-services-final-item">
+                        <div class="status-services-final-image status-alt-image-assessment"></div>
+
+                        <div class="status-services-final-copy">
+<h3>Avaliação Física</h3>
+                            <p>
+                                Análise completa do teu estado físico para definir objetivos,
+                                prioridades e o plano mais adequado. O ponto de partida
+                                para treinar com segurança, critério e visão de longo prazo.
+                            </p>
+</div>
+                    </article>
+
+                    <article class="status-services-final-item">
+                        <div class="status-services-final-image status-alt-image-pt"></div>
+
+                        <div class="status-services-final-copy">
+<h3>Personal Training</h3>
+                            <p>
+                                Treino individual com acompanhamento total e planeamento
+                                ajustado à tua fase de vida. Foco na saúde, funcionalidade
+                                e evolução contínua, com atenção máxima em cada sessão.
+                            </p>
+</div>
+                    </article>
+
+                    <article class="status-services-final-item">
+                        <div class="status-services-final-image status-alt-image-classes"></div>
+
+                        <div class="status-services-final-copy">
+<h3>Aulas de Grupo</h3>
+                            <p>
+                                Treino em grupo com orientação técnica e foco na qualidade do movimento.
+                                Aulas estruturadas para promover consistência, energia e evolução,
+                                respeitando diferentes níveis e fases da vida.
+                            </p>
+</div>
+                    </article>
+
+                    <article class="status-services-final-item">
+                        <div class="status-services-final-image status-alt-image-room"></div>
+
+                        <div class="status-services-final-copy">
+<h3>Acompanhamento em Sala</h3>
+                            <p>
+                                Treino orientado com presença constante de profissionais.
+                                Garantimos segurança, técnica correta e progressão ajustada
+                                a ti e à tua fase de vida. Consistência, acompanhamento real
+                                e resultados duradouros.
+                            </p>
+</div>
+                    </article>
+
+                    <article class="status-services-final-item">
+                        <div class="status-services-final-image status-alt-image-group"></div>
+
+                        <div class="status-services-final-copy">
+<h3>PT Group (2 a 4 alunos)</h3>
+                            <p>
+                                Treino orientado por treinador, em grupo reduzido, com foco na qualidade
+                                do movimento, progressão ajustada e acompanhamento real.
+                                Para quem procura consistência, segurança e evolução sustentada.
+                            </p>
+</div>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section
+            class="status-services-editorial-alt"
+            id="servicos-alternativa-horizontal"
+        >
+            <div class="status-services-editorial-alt-head">
+                <span class="status-services-editorial-alt-eyebrow">
+                    Alternativa
+                </span>
+
+                <h2>
+                    Serviços pensados para acompanhar a tua evolução.
+                </h2>
+            </div>
+
+            <div class="status-services-editorial-alt-viewport">
+                <div class="status-services-editorial-alt-track">
+
+                    <article class="status-services-editorial-alt-card">
+                        <div class="status-services-editorial-alt-image status-alt-image-assessment"></div>
+                        <div class="status-services-editorial-alt-copy">
+                            <h3>Avaliação Física</h3>
+                            <p>
+                                Análise completa do teu estado físico para definir objetivos,
+                                prioridades e o plano mais adequado. O ponto de partida para
+                                treinar com segurança, critério e visão de longo prazo.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="status-services-editorial-alt-card">
+                        <div class="status-services-editorial-alt-image status-alt-image-pt"></div>
+                        <div class="status-services-editorial-alt-copy">
+                            <h3>Personal Training</h3>
+                            <p>
+                                Treino individual com acompanhamento total e planeamento
+                                ajustado à tua fase de vida. Foco na saúde, funcionalidade e
+                                evolução contínua, com atenção máxima em cada sessão.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="status-services-editorial-alt-card">
+                        <div class="status-services-editorial-alt-image status-alt-image-classes"></div>
+                        <div class="status-services-editorial-alt-copy">
+                            <h3>Aulas de Grupo</h3>
+                            <p>
+                                Treino em grupo com orientação técnica e foco na qualidade
+                                do movimento. Aulas estruturadas para promover consistência,
+                                energia e evolução, respeitando diferentes níveis e fases da vida.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="status-services-editorial-alt-card">
+                        <div class="status-services-editorial-alt-image status-alt-image-room"></div>
+                        <div class="status-services-editorial-alt-copy">
+                            <h3>Acompanhamento em Sala</h3>
+                            <p>
+                                Treino orientado com presença constante de profissionais.
+                                Garantimos segurança, técnica correta e progressão ajustada
+                                a ti e à tua fase de vida.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="status-services-editorial-alt-card">
+                        <div class="status-services-editorial-alt-image status-alt-image-group"></div>
+                        <div class="status-services-editorial-alt-copy">
+                            <h3>PT Group (2 a 4 alunos)</h3>
+                            <p>
+                                Treino orientado por treinador, em grupo reduzido, com foco
+                                na qualidade do movimento, progressão ajustada e acompanhamento real.
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+
+            <div class="status-services-editorial-alt-footer">
+                <button
+                    class="status-services-editorial-alt-arrow status-services-editorial-alt-prev"
+                    type="button"
+                    aria-label="Serviço anterior"
+                >
+                    ‹
+                </button>
+
+                <span class="status-services-editorial-alt-progress">
+                    1 / 5
+                </span>
+
+                <button
+                    class="status-services-editorial-alt-arrow status-services-editorial-alt-next"
+                    type="button"
+                    aria-label="Próximo serviço"
+                >
+                    ›
+                </button>
+            </div>
+        </section>
+
+        <section
+            class="status-services-gallery-alt"
+            id="servicos-alternativa-galeria"
+        >
+            <div class="status-services-gallery-alt-head">
+                <span class="status-services-gallery-alt-eyebrow">
+                    Alternativa
+                </span>
+
+                <h2>
+                    Serviços pensados para acompanhar a tua evolução.
+                </h2>
+
+                <p class="status-services-gallery-alt-intro">
+                    Diferentes formas de acompanhamento para responder aos teus objetivos,
+                    à tua experiência e à forma como preferes treinar.
+                </p>
+            </div>
+
+            <div class="status-services-gallery-alt-viewport">
+                <div class="status-services-gallery-alt-track">
+
+                    <article class="status-services-gallery-alt-card">
+                        <div class="status-services-gallery-alt-image status-alt-image-assessment"></div>
+
+                        <div class="status-services-gallery-alt-copy">
+                            <h3>Avaliação Física</h3>
+                            <p>
+                                Análise completa do teu estado físico para definir objetivos,
+                                prioridades e o plano mais adequado. O ponto de partida para
+                                treinar com segurança, critério e visão de longo prazo.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="status-services-gallery-alt-card">
+                        <div class="status-services-gallery-alt-image status-alt-image-pt"></div>
+
+                        <div class="status-services-gallery-alt-copy">
+                            <h3>Personal Training</h3>
+                            <p>
+                                Treino individual com acompanhamento total e planeamento ajustado
+                                à tua fase de vida. Foco na saúde, funcionalidade e evolução contínua,
+                                com atenção máxima em cada sessão.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="status-services-gallery-alt-card">
+                        <div class="status-services-gallery-alt-image status-alt-image-classes"></div>
+
+                        <div class="status-services-gallery-alt-copy">
+                            <h3>Aulas de Grupo</h3>
+                            <p>
+                                Treino em grupo com orientação técnica e foco na qualidade do movimento.
+                                Aulas estruturadas para promover consistência, energia e evolução,
+                                respeitando diferentes níveis e fases da vida.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="status-services-gallery-alt-card">
+                        <div class="status-services-gallery-alt-image status-alt-image-room"></div>
+
+                        <div class="status-services-gallery-alt-copy">
+                            <h3>Acompanhamento em Sala</h3>
+                            <p>
+                                Treino orientado com presença constante de profissionais.
+                                Garantimos segurança, técnica correta e progressão ajustada a ti
+                                e à tua fase de vida.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="status-services-gallery-alt-card">
+                        <div class="status-services-gallery-alt-image status-alt-image-group"></div>
+
+                        <div class="status-services-gallery-alt-copy">
+                            <h3>PT Group (2 a 4 alunos)</h3>
+                            <p>
+                                Treino orientado por treinador, em grupo reduzido, com foco
+                                na qualidade do movimento, progressão ajustada e acompanhamento real.
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+
+            <div class="status-services-gallery-alt-footer">
+                <button
+                    class="status-services-gallery-alt-arrow status-services-gallery-alt-prev"
+                    type="button"
+                    aria-label="Serviço anterior"
+                >
+                    ‹
+                </button>
+
+                <span class="status-services-gallery-alt-progress">
+                    1 / 5
+                </span>
+
+                <button
+                    class="status-services-gallery-alt-arrow status-services-gallery-alt-next"
+                    type="button"
+                    aria-label="Próximo serviço"
+                >
+                    ›
+                </button>
+            </div>
+        </section>
+
+
+
+
+        <!-- =====================================================
+             SECÇÃO 9 | ALTERNATIVA 6: BANDAS HORIZONTAIS
+        ====================================================== -->
+        
+
+
+        <!-- =====================================================
+             SECÇÃO 10 | ALTERNATIVA 7: SELECTOR + PAINEL
+        ====================================================== -->
+        
+
+
+        <!-- =====================================================
+             SECÇÃO 11 | ALTERNATIVA 8: TIPOGRÁFICA MINIMAL
+        ====================================================== -->
+        
 
     </main>
 
@@ -1032,6 +3804,1270 @@ document.addEventListener(
 
                 }
             );
+
+        }
+
+
+        const servicesTrack =
+            document.querySelector(
+                ".status-services-track"
+            );
+
+        const servicesPrev =
+            document.querySelector(
+                ".status-services-prev"
+            );
+
+        const servicesNext =
+            document.querySelector(
+                ".status-services-next"
+            );
+
+        const servicesDots =
+            document.querySelector(
+                ".status-services-dots"
+            );
+
+        if (
+            servicesViewport &&
+            servicesTrack
+        ) {
+
+            const originalCards =
+                Array.from(
+                    servicesTrack.children
+                );
+
+            const originalCount =
+                originalCards.length;
+
+            let perView = 3;
+            let cloneCount = 3;
+            let currentIndex = 0;
+            let slideWidth = 0;
+            let isAnimating = false;
+
+            function getPerView() {
+
+                if (
+                    window.innerWidth <= 767
+                ) {
+                    return 1;
+                }
+
+                if (
+                    window.innerWidth <= 1024
+                ) {
+                    return 3;
+                }
+
+                return 3;
+
+            }
+
+            function buildInfiniteCarousel() {
+
+                perView = getPerView();
+                cloneCount = perView;
+
+                servicesTrack
+                    .querySelectorAll(
+                        "[data-status-clone='true']"
+                    )
+                    .forEach(
+                        function (clone) {
+                            clone.remove();
+                        }
+                    );
+
+                const cleanCards =
+                    Array.from(
+                        servicesTrack.children
+                    );
+
+                cleanCards.forEach(
+                    function (card) {
+                        card.removeAttribute(
+                            "data-status-clone"
+                        );
+                    }
+                );
+
+                const startClones =
+                    cleanCards
+                        .slice(-cloneCount)
+                        .map(
+                            function (card) {
+
+                                const clone =
+                                    card.cloneNode(true);
+
+                                clone.setAttribute(
+                                    "data-status-clone",
+                                    "true"
+                                );
+
+                                return clone;
+
+                            }
+                        );
+
+                const endClones =
+                    cleanCards
+                        .slice(0,cloneCount)
+                        .map(
+                            function (card) {
+
+                                const clone =
+                                    card.cloneNode(true);
+
+                                clone.setAttribute(
+                                    "data-status-clone",
+                                    "true"
+                                );
+
+                                return clone;
+
+                            }
+                        );
+
+                startClones
+                    .reverse()
+                    .forEach(
+                        function (clone) {
+                            servicesTrack.prepend(
+                                clone
+                            );
+                        }
+                    );
+
+                endClones.forEach(
+                    function (clone) {
+                        servicesTrack.append(
+                            clone
+                        );
+                    }
+                );
+
+                currentIndex =
+                    cloneCount;
+
+                requestAnimationFrame(
+                    function () {
+                        measureCarousel();
+                        moveCarousel(false);
+                        renderServicesDots();
+                    }
+                );
+
+            }
+
+            function measureCarousel() {
+
+                const firstCard =
+                    servicesTrack
+                        .querySelector(
+                            ".status-service-card"
+                        );
+
+                if (!firstCard) {
+                    return;
+                }
+
+                const gap =
+                    parseFloat(
+                        getComputedStyle(
+                            servicesTrack
+                        ).gap
+                    ) || 0;
+
+                slideWidth =
+                    firstCard
+                        .getBoundingClientRect()
+                        .width +
+                    gap;
+
+            }
+
+            function moveCarousel(animate) {
+
+                servicesTrack.style.transition =
+                    animate
+                        ? "transform .55s cubic-bezier(.22,.61,.36,1)"
+                        : "none";
+
+                servicesTrack.style.transform =
+                    "translateX(-" +
+                    currentIndex *
+                    slideWidth +
+                    "px)";
+
+            }
+
+            function getRealIndex() {
+
+                return (
+                    (
+                        currentIndex -
+                        cloneCount
+                    ) %
+                    originalCount +
+                    originalCount
+                ) %
+                originalCount;
+
+            }
+
+            function renderServicesDots() {
+
+                if (!servicesDots) {
+                    return;
+                }
+
+                const realIndex =
+                    getRealIndex();
+
+                servicesDots.innerHTML = "";
+
+                for (
+                    let i = 0;
+                    i < originalCount;
+                    i++
+                ) {
+
+                    const dot =
+                        document.createElement(
+                            "button"
+                        );
+
+                    dot.type = "button";
+                    dot.className =
+                        "status-services-dot";
+
+                    dot.setAttribute(
+                        "aria-label",
+                        "Ir para " +
+                        originalCards[i]
+                            .querySelector("h3")
+                            .textContent
+                    );
+
+                    if (
+                        i === realIndex
+                    ) {
+                        dot.classList.add(
+                            "is-active"
+                        );
+                    }
+
+                    dot.addEventListener(
+                        "click",
+                        function () {
+
+                            if (isAnimating) {
+                                return;
+                            }
+
+                            currentIndex =
+                                cloneCount + i;
+
+                            isAnimating = true;
+                            moveCarousel(true);
+
+                        }
+                    );
+
+                    servicesDots.appendChild(
+                        dot
+                    );
+
+                }
+
+            }
+
+            function goToNextService() {
+
+                if (isAnimating) {
+                    return;
+                }
+
+                isAnimating = true;
+                currentIndex += 1;
+
+                moveCarousel(true);
+
+            }
+
+            function goToPreviousService() {
+
+                if (isAnimating) {
+                    return;
+                }
+
+                isAnimating = true;
+                currentIndex -= 1;
+
+                moveCarousel(true);
+
+            }
+
+            servicesTrack.addEventListener(
+                "transitionend",
+                function () {
+
+                    if (
+                        currentIndex >=
+                        cloneCount +
+                        originalCount
+                    ) {
+                        currentIndex -=
+                            originalCount;
+
+                        moveCarousel(false);
+                    }
+
+                    if (
+                        currentIndex <
+                        cloneCount
+                    ) {
+                        currentIndex +=
+                            originalCount;
+
+                        moveCarousel(false);
+                    }
+
+                    isAnimating = false;
+                    renderServicesDots();
+
+                }
+            );
+
+            if (servicesNext) {
+                servicesNext.addEventListener(
+                    "click",
+                    goToNextService
+                );
+            }
+
+            if (servicesPrev) {
+                servicesPrev.addEventListener(
+                    "click",
+                    goToPreviousService
+                );
+            }
+
+            let startX = 0;
+            let endX = 0;
+
+            servicesViewport.addEventListener(
+                "touchstart",
+                function (event) {
+
+                    startX =
+                        event.touches[0]
+                            .clientX;
+
+                },
+                {
+                    passive: true
+                }
+            );
+
+            servicesViewport.addEventListener(
+                "touchend",
+                function (event) {
+
+                    endX =
+                        event.changedTouches[0]
+                            .clientX;
+
+                    const distance =
+                        startX - endX;
+
+                    if (
+                        Math.abs(distance) <
+                        45
+                    ) {
+                        return;
+                    }
+
+                    if (
+                        distance > 0
+                    ) {
+                        goToNextService();
+                    } else {
+                        goToPreviousService();
+                    }
+
+                },
+                {
+                    passive: true
+                }
+            );
+
+            let servicesResizeTimer;
+
+            window.addEventListener(
+                "resize",
+                function () {
+
+                    clearTimeout(
+                        servicesResizeTimer
+                    );
+
+                    servicesResizeTimer =
+                        setTimeout(
+                            function () {
+                                buildInfiniteCarousel();
+                            },
+                            140
+                        );
+
+                }
+            );
+
+            buildInfiniteCarousel();
+
+        }
+
+
+
+
+        const alt3Prev =
+            document.querySelector(
+                ".status-services-accordion-prev"
+            );
+
+        const alt3Next =
+            document.querySelector(
+                ".status-services-accordion-next"
+            );
+
+        if (alt3Track) {
+
+            const alt3OriginalCards =
+                Array.from(
+                    alt3Track.children
+                );
+
+            const alt3OriginalCount =
+                alt3OriginalCards.length;
+
+            let alt3PerView = 3;
+            let alt3CloneCount = 3;
+            let alt3Index = 0;
+            let alt3SlideWidth = 0;
+            let alt3Animating = false;
+
+            function getAlt3PerView() {
+
+                if (window.innerWidth <= 767) {
+                    return 1;
+                }
+
+                if (window.innerWidth <= 1024) {
+                    return 2;
+                }
+
+                return 3;
+
+            }
+
+            function buildAlt3Carousel() {
+
+                alt3PerView =
+                    getAlt3PerView();
+
+                alt3CloneCount =
+                    alt3PerView;
+
+                alt3Track
+                    .querySelectorAll(
+                        "[data-alt3-clone='true']"
+                    )
+                    .forEach(
+                        function (clone) {
+                            clone.remove();
+                        }
+                    );
+
+                const cleanCards =
+                    Array.from(
+                        alt3Track.children
+                    );
+
+                const startClones =
+                    cleanCards
+                        .slice(
+                            -alt3CloneCount
+                        )
+                        .map(
+                            function (card) {
+                                const clone =
+                                    card.cloneNode(true);
+                                clone.setAttribute(
+                                    "data-alt3-clone",
+                                    "true"
+                                );
+                                return clone;
+                            }
+                        );
+
+                const endClones =
+                    cleanCards
+                        .slice(
+                            0,
+                            alt3CloneCount
+                        )
+                        .map(
+                            function (card) {
+                                const clone =
+                                    card.cloneNode(true);
+                                clone.setAttribute(
+                                    "data-alt3-clone",
+                                    "true"
+                                );
+                                return clone;
+                            }
+                        );
+
+                startClones
+                    .reverse()
+                    .forEach(
+                        function (clone) {
+                            alt3Track.prepend(
+                                clone
+                            );
+                        }
+                    );
+
+                endClones.forEach(
+                    function (clone) {
+                        alt3Track.append(
+                            clone
+                        );
+                    }
+                );
+
+                alt3Index =
+                    alt3CloneCount;
+
+                requestAnimationFrame(
+                    function () {
+                        measureAlt3();
+                        moveAlt3(false);
+                    }
+                );
+
+            }
+
+            function measureAlt3() {
+
+                const firstCard =
+                    alt3Track.querySelector(
+                        ".status-services-accordion-card"
+                    );
+
+                if (!firstCard) {
+                    return;
+                }
+
+                const gap =
+                    parseFloat(
+                        getComputedStyle(
+                            alt3Track
+                        ).gap
+                    ) || 0;
+
+                alt3SlideWidth =
+                    firstCard
+                        .getBoundingClientRect()
+                        .width +
+                    gap;
+
+            }
+
+            function moveAlt3(animate) {
+
+                alt3Track.style.transition =
+                    animate
+                        ? "transform .55s cubic-bezier(.22,.61,.36,1)"
+                        : "none";
+
+                alt3Track.style.transform =
+                    "translateX(-" +
+                    alt3Index *
+                    alt3SlideWidth +
+                    "px)";
+
+            }
+
+            function nextAlt3() {
+
+                if (alt3Animating) {
+                    return;
+                }
+
+                alt3Animating = true;
+                alt3Index += 1;
+                moveAlt3(true);
+
+            }
+
+            function prevAlt3() {
+
+                if (alt3Animating) {
+                    return;
+                }
+
+                alt3Animating = true;
+                alt3Index -= 1;
+                moveAlt3(true);
+
+            }
+
+            alt3Track.addEventListener(
+                "transitionend",
+                function () {
+
+                    if (
+                        alt3Index >=
+                        alt3CloneCount +
+                        alt3OriginalCount
+                    ) {
+                        alt3Index -=
+                            alt3OriginalCount;
+                        moveAlt3(false);
+                    }
+
+                    if (
+                        alt3Index <
+                        alt3CloneCount
+                    ) {
+                        alt3Index +=
+                            alt3OriginalCount;
+                        moveAlt3(false);
+                    }
+
+                    alt3Animating = false;
+
+                }
+            );
+
+            if (alt3Next) {
+                alt3Next.addEventListener(
+                    "click",
+                    nextAlt3
+                );
+            }
+
+            if (alt3Prev) {
+                alt3Prev.addEventListener(
+                    "click",
+                    prevAlt3
+                );
+            }
+
+            let alt3StartX = 0;
+
+            alt3Track.addEventListener(
+                "touchstart",
+                function (event) {
+                    alt3StartX =
+                        event.touches[0]
+                            .clientX;
+                },
+                {
+                    passive: true
+                }
+            );
+
+            alt3Track.addEventListener(
+                "touchend",
+                function (event) {
+
+                    const distance =
+                        alt3StartX -
+                        event.changedTouches[0]
+                            .clientX;
+
+                    if (
+                        Math.abs(distance) <
+                        45
+                    ) {
+                        return;
+                    }
+
+                    if (distance > 0) {
+                        nextAlt3();
+                    } else {
+                        prevAlt3();
+                    }
+
+                },
+                {
+                    passive: true
+                }
+            );
+
+            let alt3ResizeTimer;
+
+            window.addEventListener(
+                "resize",
+                function () {
+
+                    clearTimeout(
+                        alt3ResizeTimer
+                    );
+
+                    alt3ResizeTimer =
+                        setTimeout(
+                            buildAlt3Carousel,
+                            140
+                        );
+
+                }
+            );
+
+            buildAlt3Carousel();
+
+        }
+
+
+        const altEditorialTrack =
+            document.querySelector(
+                ".status-services-editorial-alt-track"
+            );
+
+        const altEditorialCards =
+            document.querySelectorAll(
+                ".status-services-editorial-alt-card"
+            );
+
+        const altEditorialPrev =
+            document.querySelector(
+                ".status-services-editorial-alt-prev"
+            );
+
+        const altEditorialNext =
+            document.querySelector(
+                ".status-services-editorial-alt-next"
+            );
+
+        const altEditorialProgress =
+            document.querySelector(
+                ".status-services-editorial-alt-progress"
+            );
+
+        if (
+            altEditorialTrack &&
+            altEditorialCards.length
+        ) {
+
+            let altEditorialIndex = 0;
+            let altEditorialAnimating = false;
+
+            function updateAltEditorial() {
+
+                const firstCard =
+                    altEditorialCards[0];
+
+                const gap =
+                    parseFloat(
+                        getComputedStyle(
+                            altEditorialTrack
+                        ).gap
+                    ) || 0;
+
+                const cardWidth =
+                    firstCard
+                        .getBoundingClientRect()
+                        .width;
+
+                altEditorialTrack.style.transform =
+                    "translateX(-" +
+                    altEditorialIndex *
+                    (cardWidth + gap) +
+                    "px)";
+
+                if (altEditorialProgress) {
+                    altEditorialProgress.textContent =
+                        (altEditorialIndex + 1) +
+                        " / " +
+                        altEditorialCards.length;
+                }
+
+                altEditorialAnimating = true;
+
+                window.setTimeout(
+                    function () {
+                        altEditorialAnimating = false;
+                    },
+                    620
+                );
+
+            }
+
+            function nextAltEditorial() {
+
+                if (altEditorialAnimating) {
+                    return;
+                }
+
+                altEditorialIndex =
+                    altEditorialIndex >=
+                    altEditorialCards.length - 1
+                        ? 0
+                        : altEditorialIndex + 1;
+
+                updateAltEditorial();
+
+            }
+
+            function prevAltEditorial() {
+
+                if (altEditorialAnimating) {
+                    return;
+                }
+
+                altEditorialIndex =
+                    altEditorialIndex <= 0
+                        ? altEditorialCards.length - 1
+                        : altEditorialIndex - 1;
+
+                updateAltEditorial();
+
+            }
+
+            if (altEditorialNext) {
+                altEditorialNext.addEventListener(
+                    "click",
+                    nextAltEditorial
+                );
+            }
+
+            if (altEditorialPrev) {
+                altEditorialPrev.addEventListener(
+                    "click",
+                    prevAltEditorial
+                );
+            }
+
+            let altEditorialStartX = 0;
+
+            altEditorialTrack.addEventListener(
+                "touchstart",
+                function (event) {
+                    altEditorialStartX =
+                        event.touches[0]
+                            .clientX;
+                },
+                {
+                    passive: true
+                }
+            );
+
+            altEditorialTrack.addEventListener(
+                "touchend",
+                function (event) {
+
+                    const distance =
+                        altEditorialStartX -
+                        event.changedTouches[0]
+                            .clientX;
+
+                    if (
+                        Math.abs(distance) < 45
+                    ) {
+                        return;
+                    }
+
+                    if (distance > 0) {
+                        nextAltEditorial();
+                    } else {
+                        prevAltEditorial();
+                    }
+
+                },
+                {
+                    passive: true
+                }
+            );
+
+            window.addEventListener(
+                "resize",
+                function () {
+                    updateAltEditorial();
+                }
+            );
+
+            updateAltEditorial();
+
+        }
+
+
+        const galleryAltTrack =
+            document.querySelector(
+                ".status-services-gallery-alt-track"
+            );
+
+        const galleryAltViewport =
+            document.querySelector(
+                ".status-services-gallery-alt-viewport"
+            );
+
+        const galleryAltPrev =
+            document.querySelector(
+                ".status-services-gallery-alt-prev"
+            );
+
+        const galleryAltNext =
+            document.querySelector(
+                ".status-services-gallery-alt-next"
+            );
+
+        const galleryAltProgress =
+            document.querySelector(
+                ".status-services-gallery-alt-progress"
+            );
+
+        if (
+            galleryAltTrack &&
+            galleryAltViewport
+        ) {
+
+            const galleryOriginalCards =
+                Array.from(
+                    galleryAltTrack.children
+                );
+
+            const galleryOriginalCount =
+                galleryOriginalCards.length;
+
+            let galleryPerView = 3;
+            let galleryCloneCount = 3;
+            let galleryIndex = 0;
+            let gallerySlideWidth = 0;
+            let galleryAnimating = false;
+
+            function getGalleryPerView() {
+
+                if (
+                    window.innerWidth <= 767
+                ) {
+                    return 1;
+                }
+
+                if (
+                    window.innerWidth <= 1024
+                ) {
+                    return 2;
+                }
+
+                return 3;
+
+            }
+
+            function getGalleryRealIndex() {
+
+                return (
+                    (
+                        galleryIndex -
+                        galleryCloneCount
+                    ) %
+                    galleryOriginalCount +
+                    galleryOriginalCount
+                ) %
+                galleryOriginalCount;
+
+            }
+
+            function updateGalleryProgress() {
+
+                if (!galleryAltProgress) {
+                    return;
+                }
+
+                galleryAltProgress.textContent =
+                    (getGalleryRealIndex() + 1) +
+                    " / " +
+                    galleryOriginalCount;
+
+            }
+
+            function measureGallery() {
+
+                const firstCard =
+                    galleryAltTrack.querySelector(
+                        ".status-services-gallery-alt-card"
+                    );
+
+                if (!firstCard) {
+                    return;
+                }
+
+                const gap =
+                    parseFloat(
+                        getComputedStyle(
+                            galleryAltTrack
+                        ).gap
+                    ) || 0;
+
+                gallerySlideWidth =
+                    firstCard
+                        .getBoundingClientRect()
+                        .width +
+                    gap;
+
+            }
+
+            function moveGallery(animate) {
+
+                galleryAltTrack.style.transition =
+                    animate
+                        ? "transform .6s cubic-bezier(.22,.61,.36,1)"
+                        : "none";
+
+                galleryAltTrack.style.transform =
+                    "translateX(-" +
+                    galleryIndex *
+                    gallerySlideWidth +
+                    "px)";
+
+                updateGalleryProgress();
+
+            }
+
+            function buildGalleryCarousel() {
+
+                galleryPerView =
+                    getGalleryPerView();
+
+                galleryCloneCount =
+                    galleryPerView;
+
+                galleryAltTrack
+                    .querySelectorAll(
+                        "[data-gallery-clone='true']"
+                    )
+                    .forEach(
+                        function (clone) {
+                            clone.remove();
+                        }
+                    );
+
+                const cleanCards =
+                    Array.from(
+                        galleryAltTrack.children
+                    );
+
+                const startClones =
+                    cleanCards
+                        .slice(
+                            -galleryCloneCount
+                        )
+                        .map(
+                            function (card) {
+
+                                const clone =
+                                    card.cloneNode(true);
+
+                                clone.setAttribute(
+                                    "data-gallery-clone",
+                                    "true"
+                                );
+
+                                return clone;
+
+                            }
+                        );
+
+                const endClones =
+                    cleanCards
+                        .slice(
+                            0,
+                            galleryCloneCount
+                        )
+                        .map(
+                            function (card) {
+
+                                const clone =
+                                    card.cloneNode(true);
+
+                                clone.setAttribute(
+                                    "data-gallery-clone",
+                                    "true"
+                                );
+
+                                return clone;
+
+                            }
+                        );
+
+                startClones
+                    .reverse()
+                    .forEach(
+                        function (clone) {
+                            galleryAltTrack.prepend(
+                                clone
+                            );
+                        }
+                    );
+
+                endClones.forEach(
+                    function (clone) {
+                        galleryAltTrack.append(
+                            clone
+                        );
+                    }
+                );
+
+                galleryIndex =
+                    galleryCloneCount;
+
+                requestAnimationFrame(
+                    function () {
+                        measureGallery();
+                        moveGallery(false);
+                    }
+                );
+
+            }
+
+            function nextGallery() {
+
+                if (galleryAnimating) {
+                    return;
+                }
+
+                galleryAnimating = true;
+                galleryIndex += 1;
+                moveGallery(true);
+
+            }
+
+            function prevGallery() {
+
+                if (galleryAnimating) {
+                    return;
+                }
+
+                galleryAnimating = true;
+                galleryIndex -= 1;
+                moveGallery(true);
+
+            }
+
+            galleryAltTrack.addEventListener(
+                "transitionend",
+                function () {
+
+                    if (
+                        galleryIndex >=
+                        galleryCloneCount +
+                        galleryOriginalCount
+                    ) {
+                        galleryIndex -=
+                            galleryOriginalCount;
+
+                        moveGallery(false);
+                    }
+
+                    if (
+                        galleryIndex <
+                        galleryCloneCount
+                    ) {
+                        galleryIndex +=
+                            galleryOriginalCount;
+
+                        moveGallery(false);
+                    }
+
+                    galleryAnimating = false;
+                    updateGalleryProgress();
+
+                }
+            );
+
+            if (galleryAltNext) {
+                galleryAltNext.addEventListener(
+                    "click",
+                    nextGallery
+                );
+            }
+
+            if (galleryAltPrev) {
+                galleryAltPrev.addEventListener(
+                    "click",
+                    prevGallery
+                );
+            }
+
+            let galleryStartX = 0;
+
+            galleryAltViewport.addEventListener(
+                "touchstart",
+                function (event) {
+
+                    galleryStartX =
+                        event.touches[0]
+                            .clientX;
+
+                },
+                {
+                    passive: true
+                }
+            );
+
+            galleryAltViewport.addEventListener(
+                "touchend",
+                function (event) {
+
+                    const distance =
+                        galleryStartX -
+                        event.changedTouches[0]
+                            .clientX;
+
+                    if (
+                        Math.abs(distance) < 45
+                    ) {
+                        return;
+                    }
+
+                    if (
+                        distance > 0
+                    ) {
+                        nextGallery();
+                    } else {
+                        prevGallery();
+                    }
+
+                },
+                {
+                    passive: true
+                }
+            );
+
+            let galleryResizeTimer;
+
+            window.addEventListener(
+                "resize",
+                function () {
+
+                    clearTimeout(
+                        galleryResizeTimer
+                    );
+
+                    galleryResizeTimer =
+                        setTimeout(
+                            buildGalleryCarousel,
+                            140
+                        );
+
+                }
+            );
+
+            buildGalleryCarousel();
 
         }
 
