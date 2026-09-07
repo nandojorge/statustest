@@ -276,7 +276,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background: #d9d3ca;
+        background: #232220;
         padding: clamp(58px,5vw,74px) var(--status-page-padding);
         box-shadow: 0 -30px 60px rgba(0,0,0,.07);
     }
@@ -322,7 +322,7 @@
         font-size: clamp(15px,1vw,17px);
         font-weight: 400;
         line-height: 1.68;
-        color: rgba(23,23,23,.70);
+        color: rgba(243,240,234,.72);
         text-wrap: pretty;
     }
 
@@ -355,6 +355,14 @@
 
     .status-intro .status-button {
         margin-top: 28px;
+        color: var(--status-cream)!important;
+        border-color: rgba(243,240,234,.38);
+    }
+
+    .status-intro .status-button:hover {
+        color: var(--status-gold)!important;
+        border-color: var(--status-gold);
+        background: rgba(176,138,98,.08);
     }
 
     .status-services {
@@ -3092,6 +3100,220 @@
         }
     }
 
+
+    html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .status-site {
+        overflow-x: clip;
+    }
+
+    .status-services-gallery-alt {
+        overflow: hidden;
+    }
+
+    .status-services-gallery-alt-viewport {
+        overflow: hidden;
+    }
+
+    .status-services-gallery-alt-track {
+        display: flex;
+        width: 100%;
+        max-width: 100%;
+        will-change: transform;
+        touch-action: pan-y;
+    }
+
+    .status-services-gallery-alt-card {
+        min-width: 0;
+    }
+
+    .status-services-gallery-alt-footer {
+        position: relative;
+        z-index: 3;
+    }
+
+    .status-services-gallery-alt-arrow {
+        pointer-events: auto;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    @media(max-width:767px) {
+        .status-services-gallery-alt-image {
+            height: min(34svh,255px);
+            aspect-ratio: auto;
+        }
+    }
+
+    /* =========================================================
+       SERVIÇOS | SCROLL HORIZONTAL NATIVO + INFINITO
+    ========================================================= */
+
+    .status-services-gallery-alt-viewport {
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-x: contain;
+        touch-action: pan-x pan-y;
+    }
+
+    .status-services-gallery-alt-viewport::-webkit-scrollbar {
+        display: none;
+    }
+
+    .status-services-gallery-alt-track {
+        display: flex !important;
+        width: max-content !important;
+        max-width: none !important;
+        transform: none !important;
+        transition: none !important;
+        gap: clamp(20px,2vw,30px);
+    }
+
+    .status-services-gallery-alt-card {
+        scroll-snap-align: start;
+        flex: 0 0 calc((min(100vw,var(--status-max-width)) - (2 * var(--status-page-padding)) - (2 * clamp(20px,2vw,30px))) / 3) !important;
+    }
+
+    .status-services-gallery-alt-arrow {
+        position: relative;
+        z-index: 5;
+        cursor: pointer;
+        pointer-events: auto !important;
+    }
+
+    @media(max-width:1024px) and (min-width:768px) {
+        .status-services-gallery-alt-track {
+            gap: 20px;
+        }
+
+        .status-services-gallery-alt-card {
+            flex: 0 0 calc((100vw - 56px - 20px) / 2) !important;
+        }
+    }
+
+    @media(max-width:767px) {
+        .status-services-gallery-alt-track {
+            gap: 14px;
+        }
+
+        .status-services-gallery-alt-card {
+            flex: 0 0 calc(100vw - 40px) !important;
+        }
+    }
+
+
+    /* =========================================================
+       AJUSTES FINAIS | SECÇÃO 3 + MENU MOBILE
+    ========================================================= */
+
+    .status-services-gallery-alt {
+        background: #f4f1eb !important;
+        color: var(--status-dark) !important;
+    }
+
+    .status-services-gallery-alt h2,
+    .status-services-gallery-alt-copy h3 {
+        color: var(--status-dark) !important;
+    }
+
+    .status-services-gallery-alt-intro,
+    .status-services-gallery-alt-copy p,
+    .status-services-gallery-alt-progress {
+        color: rgba(23,23,23,.66) !important;
+    }
+
+    .status-services-gallery-alt-eyebrow {
+        color: var(--status-gold) !important;
+    }
+
+    .status-services-gallery-alt-arrow {
+        color: var(--status-dark) !important;
+        border-color: rgba(23,23,23,.20) !important;
+    }
+
+    .status-services-gallery-alt-arrow:hover,
+    .status-services-gallery-alt-arrow:focus {
+        color: var(--status-gold) !important;
+        border-color: var(--status-gold) !important;
+        background: rgba(176,138,98,.08) !important;
+    }
+
+    .status-services-gallery-alt-viewport {
+        padding-left: var(--status-page-padding) !important;
+        padding-right: var(--status-page-padding) !important;
+        scroll-padding-left: var(--status-page-padding);
+    }
+
+    .status-services-gallery-alt-track {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .status-mobile-socials {
+        gap: 16px !important;
+    }
+
+    @media(max-width:1024px) and (min-width:768px) {
+        .status-services-gallery-alt-viewport {
+            padding-left: 28px !important;
+            padding-right: 28px !important;
+            scroll-padding-left: 28px;
+        }
+    }
+
+    @media(max-width:767px) {
+        .status-services-gallery-alt-viewport {
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+            scroll-padding-left: 20px;
+        }
+
+        .status-mobile-socials {
+            gap: 14px !important;
+        }
+    }
+
+
+    /* =========================================================
+       AJUSTES | SECÇÃO 2 + IMAGENS DOS SERVIÇOS
+    ========================================================= */
+
+    .status-intro h2 {
+        color: #f3f0ea !important;
+    }
+
+    .status-alt-image-assessment,
+    .status-service-image--assessment {
+        background-image: url('https://ginasiostatus.pt/wp-content/uploads/2026/09/af.png') !important;
+    }
+
+    .status-alt-image-pt,
+    .status-service-image--pt {
+        background-image: url('https://ginasiostatus.pt/wp-content/uploads/2026/09/pt.png') !important;
+    }
+
+    .status-alt-image-classes,
+    .status-service-image--classes {
+        background-image: url('https://ginasiostatus.pt/wp-content/uploads/2026/09/group1.png') !important;
+    }
+
+    .status-alt-image-room,
+    .status-service-image--room {
+        background-image: url('https://ginasiostatus.pt/wp-content/uploads/2026/09/gym.png') !important;
+    }
+
+    .status-alt-image-group,
+    .status-service-image--group {
+        background-image: url('https://ginasiostatus.pt/wp-content/uploads/2026/09/pt-group.png') !important;
+    }
+
 </style>
 
 <div class="status-site">
@@ -3119,8 +3341,7 @@
             </nav>
 
             <a href="#visita" class="status-header-cta">
-                <span>Marcar uma visita</span>
-                <span class="status-arrow">↗︎</span>
+                <span>Marcar Visita</span>
             </a>
 
             <button
@@ -3260,7 +3481,7 @@
                     href="#servicos"
                     class="status-button"
                 >
-                    Conhecer o Status
+                    Marcar Visita
                 </a>
 
             </div>
@@ -3296,308 +3517,11 @@
         <!-- =====================================================
              SECÇÃO 8 | ALTERNATIVA 5: MOSAICO EDITORIAL
         ====================================================== -->
-                <section
-            class="status-services-final"
-            id="servicos"
-        >
-            <div class="status-services-final-inner">
+                
 
-                <div class="status-services-final-head">
-                    <span class="status-services-final-eyebrow">
-                        Serviços
-                    </span>
+        
 
-                    <h2>
-                        Serviços pensados para acompanhar a tua evolução.
-                    </h2>
-                </div>
-
-                <div class="status-services-final-list">
-
-                    <article class="status-services-final-item">
-                        <div class="status-services-final-image status-alt-image-assessment"></div>
-
-                        <div class="status-services-final-copy">
-<h3>Avaliação Física</h3>
-                            <p>
-                                Análise completa do teu estado físico para definir objetivos,
-                                prioridades e o plano mais adequado. O ponto de partida
-                                para treinar com segurança, critério e visão de longo prazo.
-                            </p>
-</div>
-                    </article>
-
-                    <article class="status-services-final-item">
-                        <div class="status-services-final-image status-alt-image-pt"></div>
-
-                        <div class="status-services-final-copy">
-<h3>Personal Training</h3>
-                            <p>
-                                Treino individual com acompanhamento total e planeamento
-                                ajustado à tua fase de vida. Foco na saúde, funcionalidade
-                                e evolução contínua, com atenção máxima em cada sessão.
-                            </p>
-</div>
-                    </article>
-
-                    <article class="status-services-final-item">
-                        <div class="status-services-final-image status-alt-image-classes"></div>
-
-                        <div class="status-services-final-copy">
-<h3>Aulas de Grupo</h3>
-                            <p>
-                                Treino em grupo com orientação técnica e foco na qualidade do movimento.
-                                Aulas estruturadas para promover consistência, energia e evolução,
-                                respeitando diferentes níveis e fases da vida.
-                            </p>
-</div>
-                    </article>
-
-                    <article class="status-services-final-item">
-                        <div class="status-services-final-image status-alt-image-room"></div>
-
-                        <div class="status-services-final-copy">
-<h3>Acompanhamento em Sala</h3>
-                            <p>
-                                Treino orientado com presença constante de profissionais.
-                                Garantimos segurança, técnica correta e progressão ajustada
-                                a ti e à tua fase de vida. Consistência, acompanhamento real
-                                e resultados duradouros.
-                            </p>
-</div>
-                    </article>
-
-                    <article class="status-services-final-item">
-                        <div class="status-services-final-image status-alt-image-group"></div>
-
-                        <div class="status-services-final-copy">
-<h3>PT Group (2 a 4 alunos)</h3>
-                            <p>
-                                Treino orientado por treinador, em grupo reduzido, com foco na qualidade
-                                do movimento, progressão ajustada e acompanhamento real.
-                                Para quem procura consistência, segurança e evolução sustentada.
-                            </p>
-</div>
-                    </article>
-
-                </div>
-
-            </div>
-        </section>
-
-        <section
-            class="status-services-editorial-alt"
-            id="servicos-alternativa-horizontal"
-        >
-            <div class="status-services-editorial-alt-head">
-                <span class="status-services-editorial-alt-eyebrow">
-                    Alternativa
-                </span>
-
-                <h2>
-                    Serviços pensados para acompanhar a tua evolução.
-                </h2>
-            </div>
-
-            <div class="status-services-editorial-alt-viewport">
-                <div class="status-services-editorial-alt-track">
-
-                    <article class="status-services-editorial-alt-card">
-                        <div class="status-services-editorial-alt-image status-alt-image-assessment"></div>
-                        <div class="status-services-editorial-alt-copy">
-                            <h3>Avaliação Física</h3>
-                            <p>
-                                Análise completa do teu estado físico para definir objetivos,
-                                prioridades e o plano mais adequado. O ponto de partida para
-                                treinar com segurança, critério e visão de longo prazo.
-                            </p>
-                        </div>
-                    </article>
-
-                    <article class="status-services-editorial-alt-card">
-                        <div class="status-services-editorial-alt-image status-alt-image-pt"></div>
-                        <div class="status-services-editorial-alt-copy">
-                            <h3>Personal Training</h3>
-                            <p>
-                                Treino individual com acompanhamento total e planeamento
-                                ajustado à tua fase de vida. Foco na saúde, funcionalidade e
-                                evolução contínua, com atenção máxima em cada sessão.
-                            </p>
-                        </div>
-                    </article>
-
-                    <article class="status-services-editorial-alt-card">
-                        <div class="status-services-editorial-alt-image status-alt-image-classes"></div>
-                        <div class="status-services-editorial-alt-copy">
-                            <h3>Aulas de Grupo</h3>
-                            <p>
-                                Treino em grupo com orientação técnica e foco na qualidade
-                                do movimento. Aulas estruturadas para promover consistência,
-                                energia e evolução, respeitando diferentes níveis e fases da vida.
-                            </p>
-                        </div>
-                    </article>
-
-                    <article class="status-services-editorial-alt-card">
-                        <div class="status-services-editorial-alt-image status-alt-image-room"></div>
-                        <div class="status-services-editorial-alt-copy">
-                            <h3>Acompanhamento em Sala</h3>
-                            <p>
-                                Treino orientado com presença constante de profissionais.
-                                Garantimos segurança, técnica correta e progressão ajustada
-                                a ti e à tua fase de vida.
-                            </p>
-                        </div>
-                    </article>
-
-                    <article class="status-services-editorial-alt-card">
-                        <div class="status-services-editorial-alt-image status-alt-image-group"></div>
-                        <div class="status-services-editorial-alt-copy">
-                            <h3>PT Group (2 a 4 alunos)</h3>
-                            <p>
-                                Treino orientado por treinador, em grupo reduzido, com foco
-                                na qualidade do movimento, progressão ajustada e acompanhamento real.
-                            </p>
-                        </div>
-                    </article>
-
-                </div>
-            </div>
-
-            <div class="status-services-editorial-alt-footer">
-                <button
-                    class="status-services-editorial-alt-arrow status-services-editorial-alt-prev"
-                    type="button"
-                    aria-label="Serviço anterior"
-                >
-                    ‹
-                </button>
-
-                <span class="status-services-editorial-alt-progress">
-                    1 / 5
-                </span>
-
-                <button
-                    class="status-services-editorial-alt-arrow status-services-editorial-alt-next"
-                    type="button"
-                    aria-label="Próximo serviço"
-                >
-                    ›
-                </button>
-            </div>
-        </section>
-
-        <section
-            class="status-services-gallery-alt"
-            id="servicos-alternativa-galeria"
-        >
-            <div class="status-services-gallery-alt-head">
-                <span class="status-services-gallery-alt-eyebrow">
-                    Alternativa
-                </span>
-
-                <h2>
-                    Serviços pensados para acompanhar a tua evolução.
-                </h2>
-
-                <p class="status-services-gallery-alt-intro">
-                    Diferentes formas de acompanhamento para responder aos teus objetivos,
-                    à tua experiência e à forma como preferes treinar.
-                </p>
-            </div>
-
-            <div class="status-services-gallery-alt-viewport">
-                <div class="status-services-gallery-alt-track">
-
-                    <article class="status-services-gallery-alt-card">
-                        <div class="status-services-gallery-alt-image status-alt-image-assessment"></div>
-
-                        <div class="status-services-gallery-alt-copy">
-                            <h3>Avaliação Física</h3>
-                            <p>
-                                Análise completa do teu estado físico para definir objetivos,
-                                prioridades e o plano mais adequado. O ponto de partida para
-                                treinar com segurança, critério e visão de longo prazo.
-                            </p>
-                        </div>
-                    </article>
-
-                    <article class="status-services-gallery-alt-card">
-                        <div class="status-services-gallery-alt-image status-alt-image-pt"></div>
-
-                        <div class="status-services-gallery-alt-copy">
-                            <h3>Personal Training</h3>
-                            <p>
-                                Treino individual com acompanhamento total e planeamento ajustado
-                                à tua fase de vida. Foco na saúde, funcionalidade e evolução contínua,
-                                com atenção máxima em cada sessão.
-                            </p>
-                        </div>
-                    </article>
-
-                    <article class="status-services-gallery-alt-card">
-                        <div class="status-services-gallery-alt-image status-alt-image-classes"></div>
-
-                        <div class="status-services-gallery-alt-copy">
-                            <h3>Aulas de Grupo</h3>
-                            <p>
-                                Treino em grupo com orientação técnica e foco na qualidade do movimento.
-                                Aulas estruturadas para promover consistência, energia e evolução,
-                                respeitando diferentes níveis e fases da vida.
-                            </p>
-                        </div>
-                    </article>
-
-                    <article class="status-services-gallery-alt-card">
-                        <div class="status-services-gallery-alt-image status-alt-image-room"></div>
-
-                        <div class="status-services-gallery-alt-copy">
-                            <h3>Acompanhamento em Sala</h3>
-                            <p>
-                                Treino orientado com presença constante de profissionais.
-                                Garantimos segurança, técnica correta e progressão ajustada a ti
-                                e à tua fase de vida.
-                            </p>
-                        </div>
-                    </article>
-
-                    <article class="status-services-gallery-alt-card">
-                        <div class="status-services-gallery-alt-image status-alt-image-group"></div>
-
-                        <div class="status-services-gallery-alt-copy">
-                            <h3>PT Group (2 a 4 alunos)</h3>
-                            <p>
-                                Treino orientado por treinador, em grupo reduzido, com foco
-                                na qualidade do movimento, progressão ajustada e acompanhamento real.
-                            </p>
-                        </div>
-                    </article>
-
-                </div>
-            </div>
-
-            <div class="status-services-gallery-alt-footer">
-                <button
-                    class="status-services-gallery-alt-arrow status-services-gallery-alt-prev"
-                    type="button"
-                    aria-label="Serviço anterior"
-                >
-                    ‹
-                </button>
-
-                <span class="status-services-gallery-alt-progress">
-                    1 / 5
-                </span>
-
-                <button
-                    class="status-services-gallery-alt-arrow status-services-gallery-alt-next"
-                    type="button"
-                    aria-label="Próximo serviço"
-                >
-                    ›
-                </button>
-            </div>
-        </section>
+        
 
 
 
@@ -3618,6 +3542,68 @@
              SECÇÃO 11 | ALTERNATIVA 8: TIPOGRÁFICA MINIMAL
         ====================================================== -->
         
+
+
+        <section class="status-services-gallery-alt" id="servicos">
+            <div class="status-services-gallery-alt-head">
+                <span class="status-services-gallery-alt-eyebrow">Serviços</span>
+                <h2>Serviços pensados para acompanhar a tua evolução.</h2>
+                <p class="status-services-gallery-alt-intro">
+                    Diferentes formas de acompanhamento para responder aos teus objetivos,
+                    à tua experiência e à forma como preferes treinar.
+                </p>
+            </div>
+
+            <div class="status-services-gallery-alt-viewport">
+                <div class="status-services-gallery-alt-track">
+                    <article class="status-services-gallery-alt-card">
+                        <div class="status-services-gallery-alt-image status-alt-image-assessment"></div>
+                        <div class="status-services-gallery-alt-copy">
+                            <h3>Avaliação Física</h3>
+                            <p>Análise completa do teu estado físico para definir objetivos, prioridades e o plano mais adequado. O ponto de partida para treinar com segurança, critério e visão de longo prazo.</p>
+                        </div>
+                    </article>
+
+                    <article class="status-services-gallery-alt-card">
+                        <div class="status-services-gallery-alt-image status-alt-image-pt"></div>
+                        <div class="status-services-gallery-alt-copy">
+                            <h3>Personal Training</h3>
+                            <p>Treino individual com acompanhamento total e planeamento ajustado à tua fase de vida. Foco na saúde, funcionalidade e evolução contínua, com atenção máxima em cada sessão.</p>
+                        </div>
+                    </article>
+
+                    <article class="status-services-gallery-alt-card">
+                        <div class="status-services-gallery-alt-image status-alt-image-classes"></div>
+                        <div class="status-services-gallery-alt-copy">
+                            <h3>Aulas de Grupo</h3>
+                            <p>Treino em grupo com orientação técnica e foco na qualidade do movimento. Aulas estruturadas para promover consistência, energia e evolução, respeitando diferentes níveis e fases da vida.</p>
+                        </div>
+                    </article>
+
+                    <article class="status-services-gallery-alt-card">
+                        <div class="status-services-gallery-alt-image status-alt-image-room"></div>
+                        <div class="status-services-gallery-alt-copy">
+                            <h3>Acompanhamento em Sala</h3>
+                            <p>Treino orientado com presença constante de profissionais. Garantimos segurança, técnica correta e progressão ajustada a ti e à tua fase de vida. Consistência, acompanhamento real e resultados duradouros.</p>
+                        </div>
+                    </article>
+
+                    <article class="status-services-gallery-alt-card">
+                        <div class="status-services-gallery-alt-image status-alt-image-group"></div>
+                        <div class="status-services-gallery-alt-copy">
+                            <h3>PT Group (2 a 4 alunos)</h3>
+                            <p>Treino orientado por treinador, em grupo reduzido, com foco na qualidade do movimento, progressão ajustada e acompanhamento real. Para quem procura consistência, segurança e evolução sustentada.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <div class="status-services-gallery-alt-footer">
+                <button class="status-services-gallery-alt-arrow status-services-gallery-alt-prev" type="button" aria-label="Serviço anterior">‹</button>
+                <span class="status-services-gallery-alt-progress">1 / 5</span>
+                <button class="status-services-gallery-alt-arrow status-services-gallery-alt-next" type="button" aria-label="Próximo serviço">›</button>
+            </div>
+        </section>
 
     </main>
 
@@ -3808,1270 +3794,213 @@ document.addEventListener(
         }
 
 
-        const servicesTrack =
-            document.querySelector(
-                ".status-services-track"
-            );
 
-        const servicesPrev =
-            document.querySelector(
-                ".status-services-prev"
-            );
-
-        const servicesNext =
-            document.querySelector(
-                ".status-services-next"
-            );
-
-        const servicesDots =
-            document.querySelector(
-                ".status-services-dots"
-            );
-
-        if (
-            servicesViewport &&
-            servicesTrack
-        ) {
-
-            const originalCards =
-                Array.from(
-                    servicesTrack.children
-                );
-
-            const originalCount =
-                originalCards.length;
-
-            let perView = 3;
-            let cloneCount = 3;
-            let currentIndex = 0;
-            let slideWidth = 0;
-            let isAnimating = false;
-
-            function getPerView() {
-
-                if (
-                    window.innerWidth <= 767
-                ) {
-                    return 1;
-                }
-
-                if (
-                    window.innerWidth <= 1024
-                ) {
-                    return 3;
-                }
-
-                return 3;
-
-            }
-
-            function buildInfiniteCarousel() {
-
-                perView = getPerView();
-                cloneCount = perView;
-
-                servicesTrack
-                    .querySelectorAll(
-                        "[data-status-clone='true']"
-                    )
-                    .forEach(
-                        function (clone) {
-                            clone.remove();
-                        }
-                    );
-
-                const cleanCards =
-                    Array.from(
-                        servicesTrack.children
-                    );
-
-                cleanCards.forEach(
-                    function (card) {
-                        card.removeAttribute(
-                            "data-status-clone"
-                        );
-                    }
-                );
-
-                const startClones =
-                    cleanCards
-                        .slice(-cloneCount)
-                        .map(
-                            function (card) {
-
-                                const clone =
-                                    card.cloneNode(true);
-
-                                clone.setAttribute(
-                                    "data-status-clone",
-                                    "true"
-                                );
-
-                                return clone;
-
-                            }
-                        );
-
-                const endClones =
-                    cleanCards
-                        .slice(0,cloneCount)
-                        .map(
-                            function (card) {
-
-                                const clone =
-                                    card.cloneNode(true);
-
-                                clone.setAttribute(
-                                    "data-status-clone",
-                                    "true"
-                                );
-
-                                return clone;
-
-                            }
-                        );
-
-                startClones
-                    .reverse()
-                    .forEach(
-                        function (clone) {
-                            servicesTrack.prepend(
-                                clone
-                            );
-                        }
-                    );
-
-                endClones.forEach(
-                    function (clone) {
-                        servicesTrack.append(
-                            clone
-                        );
-                    }
-                );
-
-                currentIndex =
-                    cloneCount;
-
-                requestAnimationFrame(
-                    function () {
-                        measureCarousel();
-                        moveCarousel(false);
-                        renderServicesDots();
-                    }
-                );
-
-            }
-
-            function measureCarousel() {
-
-                const firstCard =
-                    servicesTrack
-                        .querySelector(
-                            ".status-service-card"
-                        );
-
-                if (!firstCard) {
-                    return;
-                }
-
-                const gap =
-                    parseFloat(
-                        getComputedStyle(
-                            servicesTrack
-                        ).gap
-                    ) || 0;
-
-                slideWidth =
-                    firstCard
-                        .getBoundingClientRect()
-                        .width +
-                    gap;
-
-            }
-
-            function moveCarousel(animate) {
-
-                servicesTrack.style.transition =
-                    animate
-                        ? "transform .55s cubic-bezier(.22,.61,.36,1)"
-                        : "none";
-
-                servicesTrack.style.transform =
-                    "translateX(-" +
-                    currentIndex *
-                    slideWidth +
-                    "px)";
-
-            }
-
-            function getRealIndex() {
-
-                return (
-                    (
-                        currentIndex -
-                        cloneCount
-                    ) %
-                    originalCount +
-                    originalCount
-                ) %
-                originalCount;
-
-            }
-
-            function renderServicesDots() {
-
-                if (!servicesDots) {
-                    return;
-                }
-
-                const realIndex =
-                    getRealIndex();
-
-                servicesDots.innerHTML = "";
-
-                for (
-                    let i = 0;
-                    i < originalCount;
-                    i++
-                ) {
-
-                    const dot =
-                        document.createElement(
-                            "button"
-                        );
-
-                    dot.type = "button";
-                    dot.className =
-                        "status-services-dot";
-
-                    dot.setAttribute(
-                        "aria-label",
-                        "Ir para " +
-                        originalCards[i]
-                            .querySelector("h3")
-                            .textContent
-                    );
-
-                    if (
-                        i === realIndex
-                    ) {
-                        dot.classList.add(
-                            "is-active"
-                        );
-                    }
-
-                    dot.addEventListener(
-                        "click",
-                        function () {
-
-                            if (isAnimating) {
-                                return;
-                            }
-
-                            currentIndex =
-                                cloneCount + i;
-
-                            isAnimating = true;
-                            moveCarousel(true);
-
-                        }
-                    );
-
-                    servicesDots.appendChild(
-                        dot
-                    );
-
-                }
-
-            }
-
-            function goToNextService() {
-
-                if (isAnimating) {
-                    return;
-                }
-
-                isAnimating = true;
-                currentIndex += 1;
-
-                moveCarousel(true);
-
-            }
-
-            function goToPreviousService() {
-
-                if (isAnimating) {
-                    return;
-                }
-
-                isAnimating = true;
-                currentIndex -= 1;
-
-                moveCarousel(true);
-
-            }
-
-            servicesTrack.addEventListener(
-                "transitionend",
-                function () {
-
-                    if (
-                        currentIndex >=
-                        cloneCount +
-                        originalCount
-                    ) {
-                        currentIndex -=
-                            originalCount;
-
-                        moveCarousel(false);
-                    }
-
-                    if (
-                        currentIndex <
-                        cloneCount
-                    ) {
-                        currentIndex +=
-                            originalCount;
-
-                        moveCarousel(false);
-                    }
-
-                    isAnimating = false;
-                    renderServicesDots();
-
-                }
-            );
-
-            if (servicesNext) {
-                servicesNext.addEventListener(
-                    "click",
-                    goToNextService
-                );
-            }
-
-            if (servicesPrev) {
-                servicesPrev.addEventListener(
-                    "click",
-                    goToPreviousService
-                );
-            }
-
-            let startX = 0;
-            let endX = 0;
-
-            servicesViewport.addEventListener(
-                "touchstart",
-                function (event) {
-
-                    startX =
-                        event.touches[0]
-                            .clientX;
-
-                },
-                {
-                    passive: true
-                }
-            );
-
-            servicesViewport.addEventListener(
-                "touchend",
-                function (event) {
-
-                    endX =
-                        event.changedTouches[0]
-                            .clientX;
-
-                    const distance =
-                        startX - endX;
-
-                    if (
-                        Math.abs(distance) <
-                        45
-                    ) {
-                        return;
-                    }
-
-                    if (
-                        distance > 0
-                    ) {
-                        goToNextService();
-                    } else {
-                        goToPreviousService();
-                    }
-
-                },
-                {
-                    passive: true
-                }
-            );
-
-            let servicesResizeTimer;
-
-            window.addEventListener(
-                "resize",
-                function () {
-
-                    clearTimeout(
-                        servicesResizeTimer
-                    );
-
-                    servicesResizeTimer =
-                        setTimeout(
-                            function () {
-                                buildInfiniteCarousel();
-                            },
-                            140
-                        );
-
-                }
-            );
-
-            buildInfiniteCarousel();
-
-        }
-
-
-
-
-        const alt3Prev =
-            document.querySelector(
-                ".status-services-accordion-prev"
-            );
-
-        const alt3Next =
-            document.querySelector(
-                ".status-services-accordion-next"
-            );
-
-        if (alt3Track) {
-
-            const alt3OriginalCards =
-                Array.from(
-                    alt3Track.children
-                );
-
-            const alt3OriginalCount =
-                alt3OriginalCards.length;
-
-            let alt3PerView = 3;
-            let alt3CloneCount = 3;
-            let alt3Index = 0;
-            let alt3SlideWidth = 0;
-            let alt3Animating = false;
-
-            function getAlt3PerView() {
-
-                if (window.innerWidth <= 767) {
-                    return 1;
-                }
-
-                if (window.innerWidth <= 1024) {
-                    return 2;
-                }
-
-                return 3;
-
-            }
-
-            function buildAlt3Carousel() {
-
-                alt3PerView =
-                    getAlt3PerView();
-
-                alt3CloneCount =
-                    alt3PerView;
-
-                alt3Track
-                    .querySelectorAll(
-                        "[data-alt3-clone='true']"
-                    )
-                    .forEach(
-                        function (clone) {
-                            clone.remove();
-                        }
-                    );
-
-                const cleanCards =
-                    Array.from(
-                        alt3Track.children
-                    );
-
-                const startClones =
-                    cleanCards
-                        .slice(
-                            -alt3CloneCount
-                        )
-                        .map(
-                            function (card) {
-                                const clone =
-                                    card.cloneNode(true);
-                                clone.setAttribute(
-                                    "data-alt3-clone",
-                                    "true"
-                                );
-                                return clone;
-                            }
-                        );
-
-                const endClones =
-                    cleanCards
-                        .slice(
-                            0,
-                            alt3CloneCount
-                        )
-                        .map(
-                            function (card) {
-                                const clone =
-                                    card.cloneNode(true);
-                                clone.setAttribute(
-                                    "data-alt3-clone",
-                                    "true"
-                                );
-                                return clone;
-                            }
-                        );
-
-                startClones
-                    .reverse()
-                    .forEach(
-                        function (clone) {
-                            alt3Track.prepend(
-                                clone
-                            );
-                        }
-                    );
-
-                endClones.forEach(
-                    function (clone) {
-                        alt3Track.append(
-                            clone
-                        );
-                    }
-                );
-
-                alt3Index =
-                    alt3CloneCount;
-
-                requestAnimationFrame(
-                    function () {
-                        measureAlt3();
-                        moveAlt3(false);
-                    }
-                );
-
-            }
-
-            function measureAlt3() {
-
-                const firstCard =
-                    alt3Track.querySelector(
-                        ".status-services-accordion-card"
-                    );
-
-                if (!firstCard) {
-                    return;
-                }
-
-                const gap =
-                    parseFloat(
-                        getComputedStyle(
-                            alt3Track
-                        ).gap
-                    ) || 0;
-
-                alt3SlideWidth =
-                    firstCard
-                        .getBoundingClientRect()
-                        .width +
-                    gap;
-
-            }
-
-            function moveAlt3(animate) {
-
-                alt3Track.style.transition =
-                    animate
-                        ? "transform .55s cubic-bezier(.22,.61,.36,1)"
-                        : "none";
-
-                alt3Track.style.transform =
-                    "translateX(-" +
-                    alt3Index *
-                    alt3SlideWidth +
-                    "px)";
-
-            }
-
-            function nextAlt3() {
-
-                if (alt3Animating) {
-                    return;
-                }
-
-                alt3Animating = true;
-                alt3Index += 1;
-                moveAlt3(true);
-
-            }
-
-            function prevAlt3() {
-
-                if (alt3Animating) {
-                    return;
-                }
-
-                alt3Animating = true;
-                alt3Index -= 1;
-                moveAlt3(true);
-
-            }
-
-            alt3Track.addEventListener(
-                "transitionend",
-                function () {
-
-                    if (
-                        alt3Index >=
-                        alt3CloneCount +
-                        alt3OriginalCount
-                    ) {
-                        alt3Index -=
-                            alt3OriginalCount;
-                        moveAlt3(false);
-                    }
-
-                    if (
-                        alt3Index <
-                        alt3CloneCount
-                    ) {
-                        alt3Index +=
-                            alt3OriginalCount;
-                        moveAlt3(false);
-                    }
-
-                    alt3Animating = false;
-
-                }
-            );
-
-            if (alt3Next) {
-                alt3Next.addEventListener(
-                    "click",
-                    nextAlt3
-                );
-            }
-
-            if (alt3Prev) {
-                alt3Prev.addEventListener(
-                    "click",
-                    prevAlt3
-                );
-            }
-
-            let alt3StartX = 0;
-
-            alt3Track.addEventListener(
-                "touchstart",
-                function (event) {
-                    alt3StartX =
-                        event.touches[0]
-                            .clientX;
-                },
-                {
-                    passive: true
-                }
-            );
-
-            alt3Track.addEventListener(
-                "touchend",
-                function (event) {
-
-                    const distance =
-                        alt3StartX -
-                        event.changedTouches[0]
-                            .clientX;
-
-                    if (
-                        Math.abs(distance) <
-                        45
-                    ) {
-                        return;
-                    }
-
-                    if (distance > 0) {
-                        nextAlt3();
-                    } else {
-                        prevAlt3();
-                    }
-
-                },
-                {
-                    passive: true
-                }
-            );
-
-            let alt3ResizeTimer;
-
-            window.addEventListener(
-                "resize",
-                function () {
-
-                    clearTimeout(
-                        alt3ResizeTimer
-                    );
-
-                    alt3ResizeTimer =
-                        setTimeout(
-                            buildAlt3Carousel,
-                            140
-                        );
-
-                }
-            );
-
-            buildAlt3Carousel();
-
-        }
-
-
-        const altEditorialTrack =
-            document.querySelector(
-                ".status-services-editorial-alt-track"
-            );
-
-        const altEditorialCards =
-            document.querySelectorAll(
-                ".status-services-editorial-alt-card"
-            );
-
-        const altEditorialPrev =
-            document.querySelector(
-                ".status-services-editorial-alt-prev"
-            );
-
-        const altEditorialNext =
-            document.querySelector(
-                ".status-services-editorial-alt-next"
-            );
-
-        const altEditorialProgress =
-            document.querySelector(
-                ".status-services-editorial-alt-progress"
-            );
-
-        if (
-            altEditorialTrack &&
-            altEditorialCards.length
-        ) {
-
-            let altEditorialIndex = 0;
-            let altEditorialAnimating = false;
-
-            function updateAltEditorial() {
-
-                const firstCard =
-                    altEditorialCards[0];
-
-                const gap =
-                    parseFloat(
-                        getComputedStyle(
-                            altEditorialTrack
-                        ).gap
-                    ) || 0;
-
-                const cardWidth =
-                    firstCard
-                        .getBoundingClientRect()
-                        .width;
-
-                altEditorialTrack.style.transform =
-                    "translateX(-" +
-                    altEditorialIndex *
-                    (cardWidth + gap) +
-                    "px)";
-
-                if (altEditorialProgress) {
-                    altEditorialProgress.textContent =
-                        (altEditorialIndex + 1) +
-                        " / " +
-                        altEditorialCards.length;
-                }
-
-                altEditorialAnimating = true;
-
-                window.setTimeout(
-                    function () {
-                        altEditorialAnimating = false;
-                    },
-                    620
-                );
-
-            }
-
-            function nextAltEditorial() {
-
-                if (altEditorialAnimating) {
-                    return;
-                }
-
-                altEditorialIndex =
-                    altEditorialIndex >=
-                    altEditorialCards.length - 1
-                        ? 0
-                        : altEditorialIndex + 1;
-
-                updateAltEditorial();
-
-            }
-
-            function prevAltEditorial() {
-
-                if (altEditorialAnimating) {
-                    return;
-                }
-
-                altEditorialIndex =
-                    altEditorialIndex <= 0
-                        ? altEditorialCards.length - 1
-                        : altEditorialIndex - 1;
-
-                updateAltEditorial();
-
-            }
-
-            if (altEditorialNext) {
-                altEditorialNext.addEventListener(
-                    "click",
-                    nextAltEditorial
-                );
-            }
-
-            if (altEditorialPrev) {
-                altEditorialPrev.addEventListener(
-                    "click",
-                    prevAltEditorial
-                );
-            }
-
-            let altEditorialStartX = 0;
-
-            altEditorialTrack.addEventListener(
-                "touchstart",
-                function (event) {
-                    altEditorialStartX =
-                        event.touches[0]
-                            .clientX;
-                },
-                {
-                    passive: true
-                }
-            );
-
-            altEditorialTrack.addEventListener(
-                "touchend",
-                function (event) {
-
-                    const distance =
-                        altEditorialStartX -
-                        event.changedTouches[0]
-                            .clientX;
-
-                    if (
-                        Math.abs(distance) < 45
-                    ) {
-                        return;
-                    }
-
-                    if (distance > 0) {
-                        nextAltEditorial();
-                    } else {
-                        prevAltEditorial();
-                    }
-
-                },
-                {
-                    passive: true
-                }
-            );
-
-            window.addEventListener(
-                "resize",
-                function () {
-                    updateAltEditorial();
-                }
-            );
-
-            updateAltEditorial();
-
-        }
-
-
-        const galleryAltTrack =
-            document.querySelector(
-                ".status-services-gallery-alt-track"
-            );
-
-        const galleryAltViewport =
+        const svcViewport =
             document.querySelector(
                 ".status-services-gallery-alt-viewport"
             );
 
-        const galleryAltPrev =
+        const svcTrack =
+            document.querySelector(
+                ".status-services-gallery-alt-track"
+            );
+
+        const svcPrev =
             document.querySelector(
                 ".status-services-gallery-alt-prev"
             );
 
-        const galleryAltNext =
+        const svcNext =
             document.querySelector(
                 ".status-services-gallery-alt-next"
             );
 
-        const galleryAltProgress =
+        const svcProgress =
             document.querySelector(
                 ".status-services-gallery-alt-progress"
             );
 
         if (
-            galleryAltTrack &&
-            galleryAltViewport
+            svcViewport &&
+            svcTrack
         ) {
 
-            const galleryOriginalCards =
+            const svcCards =
                 Array.from(
-                    galleryAltTrack.children
+                    svcTrack.querySelectorAll(
+                        ".status-services-gallery-alt-card"
+                    )
                 );
 
-            const galleryOriginalCount =
-                galleryOriginalCards.length;
+            const svcCount =
+                svcCards.length;
 
-            let galleryPerView = 3;
-            let galleryCloneCount = 3;
-            let galleryIndex = 0;
-            let gallerySlideWidth = 0;
-            let galleryAnimating = false;
+            let svcStep = 0;
+            let svcIndex = 0;
+            let svcResizeTimer;
 
-            function getGalleryPerView() {
+            function measureSvcStep() {
 
-                if (
-                    window.innerWidth <= 767
-                ) {
-                    return 1;
-                }
-
-                if (
-                    window.innerWidth <= 1024
-                ) {
-                    return 2;
-                }
-
-                return 3;
-
-            }
-
-            function getGalleryRealIndex() {
-
-                return (
-                    (
-                        galleryIndex -
-                        galleryCloneCount
-                    ) %
-                    galleryOriginalCount +
-                    galleryOriginalCount
-                ) %
-                galleryOriginalCount;
-
-            }
-
-            function updateGalleryProgress() {
-
-                if (!galleryAltProgress) {
-                    return;
-                }
-
-                galleryAltProgress.textContent =
-                    (getGalleryRealIndex() + 1) +
-                    " / " +
-                    galleryOriginalCount;
-
-            }
-
-            function measureGallery() {
-
-                const firstCard =
-                    galleryAltTrack.querySelector(
-                        ".status-services-gallery-alt-card"
-                    );
-
-                if (!firstCard) {
+                if (!svcCards.length) {
                     return;
                 }
 
                 const gap =
                     parseFloat(
                         getComputedStyle(
-                            galleryAltTrack
+                            svcTrack
                         ).gap
                     ) || 0;
 
-                gallerySlideWidth =
-                    firstCard
+                svcStep =
+                    svcCards[0]
                         .getBoundingClientRect()
                         .width +
                     gap;
 
             }
 
-            function moveGallery(animate) {
+            function updateSvcProgress() {
 
-                galleryAltTrack.style.transition =
-                    animate
-                        ? "transform .6s cubic-bezier(.22,.61,.36,1)"
-                        : "none";
+                if (!svcProgress) {
+                    return;
+                }
 
-                galleryAltTrack.style.transform =
-                    "translateX(-" +
-                    galleryIndex *
-                    gallerySlideWidth +
-                    "px)";
-
-                updateGalleryProgress();
+                svcProgress.textContent =
+                    (svcIndex + 1) +
+                    " / " +
+                    svcCount;
 
             }
 
-            function buildGalleryCarousel() {
+            function scrollSvcToIndex(
+                index,
+                behavior
+            ) {
 
-                galleryPerView =
-                    getGalleryPerView();
+                if (!svcStep) {
+                    measureSvcStep();
+                }
 
-                galleryCloneCount =
-                    galleryPerView;
+                svcIndex =
+                    (
+                        index +
+                        svcCount
+                    ) %
+                    svcCount;
 
-                galleryAltTrack
-                    .querySelectorAll(
-                        "[data-gallery-clone='true']"
-                    )
-                    .forEach(
-                        function (clone) {
-                            clone.remove();
-                        }
-                    );
+                svcViewport.scrollTo({
+                    left:
+                        svcIndex *
+                        svcStep,
+                    behavior:
+                        behavior || "smooth"
+                });
 
-                const cleanCards =
-                    Array.from(
-                        galleryAltTrack.children
-                    );
+                updateSvcProgress();
 
-                const startClones =
-                    cleanCards
-                        .slice(
-                            -galleryCloneCount
-                        )
-                        .map(
-                            function (card) {
+            }
 
-                                const clone =
-                                    card.cloneNode(true);
+            function nextSvc() {
 
-                                clone.setAttribute(
-                                    "data-gallery-clone",
-                                    "true"
-                                );
-
-                                return clone;
-
-                            }
-                        );
-
-                const endClones =
-                    cleanCards
-                        .slice(
-                            0,
-                            galleryCloneCount
-                        )
-                        .map(
-                            function (card) {
-
-                                const clone =
-                                    card.cloneNode(true);
-
-                                clone.setAttribute(
-                                    "data-gallery-clone",
-                                    "true"
-                                );
-
-                                return clone;
-
-                            }
-                        );
-
-                startClones
-                    .reverse()
-                    .forEach(
-                        function (clone) {
-                            galleryAltTrack.prepend(
-                                clone
-                            );
-                        }
-                    );
-
-                endClones.forEach(
-                    function (clone) {
-                        galleryAltTrack.append(
-                            clone
-                        );
-                    }
-                );
-
-                galleryIndex =
-                    galleryCloneCount;
-
-                requestAnimationFrame(
-                    function () {
-                        measureGallery();
-                        moveGallery(false);
-                    }
+                scrollSvcToIndex(
+                    svcIndex + 1,
+                    "smooth"
                 );
 
             }
 
-            function nextGallery() {
+            function prevSvc() {
 
-                if (galleryAnimating) {
-                    return;
-                }
-
-                galleryAnimating = true;
-                galleryIndex += 1;
-                moveGallery(true);
+                scrollSvcToIndex(
+                    svcIndex - 1,
+                    "smooth"
+                );
 
             }
 
-            function prevGallery() {
-
-                if (galleryAnimating) {
-                    return;
-                }
-
-                galleryAnimating = true;
-                galleryIndex -= 1;
-                moveGallery(true);
-
+            if (svcNext) {
+                svcNext.addEventListener(
+                    "click",
+                    function (event) {
+                        event.preventDefault();
+                        nextSvc();
+                    }
+                );
             }
 
-            galleryAltTrack.addEventListener(
-                "transitionend",
+            if (svcPrev) {
+                svcPrev.addEventListener(
+                    "click",
+                    function (event) {
+                        event.preventDefault();
+                        prevSvc();
+                    }
+                );
+            }
+
+            svcViewport.addEventListener(
+                "scroll",
                 function () {
 
-                    if (
-                        galleryIndex >=
-                        galleryCloneCount +
-                        galleryOriginalCount
-                    ) {
-                        galleryIndex -=
-                            galleryOriginalCount;
-
-                        moveGallery(false);
-                    }
-
-                    if (
-                        galleryIndex <
-                        galleryCloneCount
-                    ) {
-                        galleryIndex +=
-                            galleryOriginalCount;
-
-                        moveGallery(false);
-                    }
-
-                    galleryAnimating = false;
-                    updateGalleryProgress();
-
-                }
-            );
-
-            if (galleryAltNext) {
-                galleryAltNext.addEventListener(
-                    "click",
-                    nextGallery
-                );
-            }
-
-            if (galleryAltPrev) {
-                galleryAltPrev.addEventListener(
-                    "click",
-                    prevGallery
-                );
-            }
-
-            let galleryStartX = 0;
-
-            galleryAltViewport.addEventListener(
-                "touchstart",
-                function (event) {
-
-                    galleryStartX =
-                        event.touches[0]
-                            .clientX;
-
-                },
-                {
-                    passive: true
-                }
-            );
-
-            galleryAltViewport.addEventListener(
-                "touchend",
-                function (event) {
-
-                    const distance =
-                        galleryStartX -
-                        event.changedTouches[0]
-                            .clientX;
-
-                    if (
-                        Math.abs(distance) < 45
-                    ) {
+                    if (!svcStep) {
                         return;
                     }
 
-                    if (
-                        distance > 0
-                    ) {
-                        nextGallery();
-                    } else {
-                        prevGallery();
-                    }
+                    const nearest =
+                        Math.round(
+                            svcViewport.scrollLeft /
+                            svcStep
+                        );
+
+                    svcIndex =
+                        Math.max(
+                            0,
+                            Math.min(
+                                svcCount - 1,
+                                nearest
+                            )
+                        );
+
+                    updateSvcProgress();
 
                 },
                 {
                     passive: true
                 }
             );
-
-            let galleryResizeTimer;
 
             window.addEventListener(
                 "resize",
                 function () {
 
                     clearTimeout(
-                        galleryResizeTimer
+                        svcResizeTimer
                     );
 
-                    galleryResizeTimer =
+                    svcResizeTimer =
                         setTimeout(
-                            buildGalleryCarousel,
-                            140
+                            function () {
+                                measureSvcStep();
+                                scrollSvcToIndex(
+                                    svcIndex,
+                                    "auto"
+                                );
+                            },
+                            120
                         );
 
                 }
             );
 
-            buildGalleryCarousel();
+            measureSvcStep();
+            scrollSvcToIndex(
+                0,
+                "auto"
+            );
 
         }
 
     }
 );
-
 </script>
